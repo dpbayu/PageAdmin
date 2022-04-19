@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+
+<body>
+    <div class="bg-orange-100 h-screen w-full p-10">
+        <div x-data="{search: '', 
+        items: ['Apple', 'Banana', 'Mango', 'Cherry', 'Watermelon', 'Melon'],
+        get filteredItems() {
+            return this.items.filter(item => item.startsWith(this.search))
+        }
+    }">
+
+            <h1 class="text-3xl font-bold">Search fruit you want</h1>
+            <div class="w-64">
+                <input class="border border-slate-300 rounded px-5 mt-5 h-9 w-full" x-model="search">
+            </div>
+            <ul>
+                <template x-for="item in filteredItems">
+                    <li class="p-2 border-b border-red-200 w-64" x-text="item">item</li>
+                </template>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

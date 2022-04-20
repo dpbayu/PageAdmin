@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Image Binder Alpine JS</title>
+</head>
+
+<body class="text-gray-800 bg-gray-200">
+    <div class="container mx-auto p-4 m-4">
+        <!-- Title -->
+        <h1 class="text-2xl font-bold">Image Binder</h1>
+        <div x-on:submit.prevent="getImage"
+            x-data="{query:'',img:'',getImage(){this.img=`https://source.unsplash.com/1600x900/?${this.query}`}}">
+            <form>
+                <input type=" text" x-model="query">
+                <button type="submit">Search</button>
+            </form>
+            <div x-show="img">
+                <img x-bind:src="img" style="width:300px">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

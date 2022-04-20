@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Accordion Alpine JS</title>
+</head>
+
+<body>
+    <div class="container mx-auto p-2" x-data="{
+            faqs: [
+                {
+                    question: 'Why do I need Alpine JS ?',
+                    answer: 'Text 1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi odit, perferendis temporibus distinctio doloribus quaerat, excepturi veritatis in ipsam eligendi, dicta enim laudantium suscipit dolore tempore? Eligendi corporis libero neque nulla maiores ratione dolor mollitia, voluptates laudantium quia voluptatum blanditiis, molestiae, earum dicta officia incidunt. Delectus excepturi soluta molestias hic?', 
+                    isOpen: true,
+                },
+                {
+                    question: 'Why am I so awesome ?',
+                    answer: 'Text 2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi odit, perferendis temporibus distinctio doloribus quaerat, excepturi veritatis in ipsam eligendi, dicta enim laudantium suscipit dolore tempore? Eligendi corporis libero neque nulla maiores ratione dolor mollitia, voluptates laudantium quia voluptatum blanditiis, molestiae, earum dicta officia incidunt. Delectus excepturi soluta molestias hic?', 
+                    isOpen: true,
+                },
+                {
+                    question: 'Why learn on Scrimba ?',
+                    answer: 'Text 3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi odit, perferendis temporibus distinctio doloribus quaerat, excepturi veritatis in ipsam eligendi, dicta enim laudantium suscipit dolore tempore? Eligendi corporis libero neque nulla maiores ratione dolor mollitia, voluptates laudantium quia voluptatum blanditiis, molestiae, earum dicta officia incidunt. Delectus excepturi soluta molestias hic?', 
+                    isOpen: true,
+                },
+            ]
+        }">
+        <h1 class="text-2xl font-bold">FAQ</h1>
+        <div class="leading-loose text-lg mt-6">
+            <template x-for="faq in faqs" :key="faq.question">
+                <div>
+                    <button
+                        class="w-full font-bold border-b border-gray-400 py-3 flex justify-between items-center mt-4"
+                        @click="faq.isOpen = !faq.isOpen">
+                        <div x-text="faq.question"></div>
+                        <!-- Add -->
+                        <svg class="h-5 w-5" viewBox="0 0 32 32" x-show="!faq.isOpen">
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                }
+                            </style>
+                            <g>
+                                <path
+                                    d="M16,29A13,13,0,1,1,29,16,13,13,0,0,1,16,29ZM16,5A11,11,0,1,0,27,16,11,11,0,0,0,16,5Z" />
+                                <path d="M16,23a1,1,0,0,1-1-1V10a1,1,0,0,1,2,0V22A1,1,0,0,1,16,23Z" />
+                                <path d="M22,17H10a1,1,0,0,1,0-2H22a1,1,0,0,1,0,2Z" />
+                            </g>
+                            <g id="frame">
+                                <rect class="cls-1" height="32" width="32" />
+                            </g>
+                        </svg>
+                        <!-- Minus -->
+                        <svg class="h-5 w-5" viewBox="0 0 32 32" x-show="faq.isOpen">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: none;
+                                    }
+                                </style>
+                            </defs>
+                            <g data-name="Layer 2" id="Layer_2">
+                                <path
+                                    d="M16,29A13,13,0,1,1,29,16,13,13,0,0,1,16,29ZM16,5A11,11,0,1,0,27,16,11,11,0,0,0,16,5Z" />
+                                <path d="M22,17H10a1,1,0,0,1,0-2H22a1,1,0,0,1,0,2Z" />
+                            </g>
+                            <g id="frame">
+                                <rect class="cls-1" height="32" width="32" />
+                            </g>
+                        </svg>
+                    </button>
+                    <div class="text-gray-700 text-sm mt-2" x-text="faq.answer" x-show="faq.isOpen"></div>
+                </div>
+            </template>
+        </div>
+    </div>
+</body>
+
+</html>

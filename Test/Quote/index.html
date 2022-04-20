@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Quote Alpine JS</title>
+</head>
+
+<body class="bg-gray-400">
+    <div class="container mx-auto flex w-full flex-wrap">
+        <!-- Init -->
+        <div class="w-full py-5" x-data="{quote:''}" x-init="quote='Awesome Quote'">
+            <div class="flex items-center text-center justify-center h-28 text-2xl italic"
+                x-text="`&quot;${quote}&quot;`"></div>
+        </div>
+        <!-- Init -->
+        <!-- Fetch -->
+        <div class="w-full py-5" x-data="{quote:''}" x-init="
+            fetch('https://api.kanye.rest')
+            .then(response=>response.json())
+            .then(data=>quote=data.quote)">
+            <div class="flex items-center text-center justify-center h-28 text-2xl italic"
+                x-text="`&quot;${quote}&quot;`"></div>
+        </div>
+        <!-- Fetch -->
+    </div>
+</body>
+
+</html>

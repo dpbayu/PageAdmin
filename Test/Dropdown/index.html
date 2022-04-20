@@ -11,11 +11,15 @@
 
 <body>
     <div class="bg-orange-100 h-screen w-full p-10" x-data="{open: false}">
-        <button class="bg-orange-500 mb-5 h-10 w-44 self-center text-white justify-center align-center rounded-sm"
+        <button class="bg-orange-500 mb-3 h-10 w-44 self-center text-white justify-center align-center rounded-sm"
             x-on:click="open = true">
             Toggle Dropdown
         </button>
-        <div class="w-full border border-orange-500 px-5 py-1 shadow-md" x-show="open" @click.outside="open = false">
+        <div class="w-full border border-orange-500 px-5 py-1 shadow-md" x-show="open"
+            x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-500"
+            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
+            @click.outside="open = false">
             <li>Dropdown Item 1</li>
             <li>Dropdown Item 2</li>
             <li>Dropdown Item 3</li>

@@ -6,47 +6,510 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316',
+                        secondary: '#fca5a5',
+                        third: '#475569',
+                    }
+                }
+            }
+        }
+    </script>
     <title>Website Alpine JS</title>
 </head>
 
 <body>
-    <div class="container w-full h-fit flex mx-auto px-4 xl:px-64 my-10">
-        <div class="w-1/3 h-full bg-blue-200 py-3 mr-5" x-data="{menu:'Dashboard'}">
+    <div class="container h-fit grid grid-cols-12 mx-auto my-10" x-data="{menu:'Dashboard'}">
+        <div class="col-span-3 h-full bg-orange-50 py-3 mr-5">
             <h1 class="text-2xl font-bold mb-5 px-5">Menu</h1>
             <ul class="flex flex-col">
                 <!-- Dashboard -->
-                <li class="w-full"><a class="inline-block px-14 py-2 font-semibold hover:text-orange-300"
-                        :class="{'bg-orange-100 w-full text-orange-500': menu === 'Dashboard'}" href="#"
-                        @click.prevent="menu='Dashboard'">Dashboard</a></li>
+                <li class="w-full flex cursor-pointer items-center justify-between px-10 h-10"
+                    :class="{'bg-orange-100 w-full text-orange-500': menu === 'Dashboard'}"
+                    @click.prevent="menu='Dashboard'">
+                    <span class="font-semibold">Dashboard</span>
+                </li>
                 <!-- Pesanan -->
-                <li class="w-full"><a class="inline-block px-14 py-2 font-semibold hover:text-orange-300"
-                        :class="{'bg-orange-100 w-full text-orange-500': menu === 'Pesanan'}" href="#"
-                        @click.prevent="menu='Pesanan'">Pesanan</a></li>
+                <li class="w-full flex cursor-pointer items-center justify-between px-10"
+                    @click.prevent="menu='Pesanan'">
+                    <span class="font-semibold">Pesanan</span>
+                    <svg class="w-10 h-10 fill-current" :class="{'bg-orange-100 w-full text-orange-500'}" viewBox=" 0 0
+                        64 64">
+                        <g transform="translate(237.000000, 335.000000)">
+                            <polyline class="st0" id="Fill-35"
+                                points="-191.3,-296.9 -193.3,-294.9 -205,-306.6 -216.7,-294.9 -218.7,-296.9 -205,-310.6      -191.3,-296.9    " />
+                        </g>
+                    </svg>
+                </li>
+                <div x-show="menu === 'Pesanan'">
+                    <li class="my-2 px-14" :class="{'bg-orange-100 w-full text-orange-500': menu === 'Pesanan'}">Pesanan
+                        Saya</li>
+                    <li class="my-2 px-14">Pembatalan</li>
+                    <li class="my-2 px-14">Pengembalian</li>
+                </div>
                 <!-- Keuangan -->
-                <li class="w-full"><a class="inline-block px-14 py-2 font-semibold hover:text-orange-300"
-                        :class="{'bg-orange-100 w-full text-orange-500': menu === 'Keuangan'}" href="#"
-                        @click.prevent="menu='Keuangan'">Keuangan</a></li>
+                <li class="w-full flex cursor-pointer items-center justify-between px-10"
+                    :class="{'bg-orange-100 w-full text-orange-500': menu === 'Keuangan'}"
+                    @click.prevent="menu='Keuangan'">
+                    <span class="font-semibold">Keuangan</span>
+                    <svg class="w-10 h-10 fill-current" :class="{'bg-orange-100 w-full text-orange-500'}"" viewBox=" 0 0
+                        64 64">
+                        <g transform="translate(237.000000, 335.000000)">
+                            <polyline class="st0" id="Fill-35"
+                                points="-191.3,-296.9 -193.3,-294.9 -205,-306.6 -216.7,-294.9 -218.7,-296.9 -205,-310.6      -191.3,-296.9    " />
+                        </g>
+                    </svg>
+                </li>
+                <div class="px-14" x-show="menu === 'Keuangan'">
+                    <li class="my-2">Saldo Saya</li>
+                    <li class="my-2">Rekening Bank</li>
+                    <li class="my-2">Tarik Saldo</li>
+                    <li class="my-2">Laporan</li>
+                    <li class="my-2">Pengaturan</li>
+                </div>
                 <!-- Inventory -->
-                <li class="w-full"><a class="inline-block px-14 py-2 font-semibold hover:text-orange-300"
-                        :class="{'bg-orange-100 w-full text-orange-500': menu === 'Inventory'}" href="#"
-                        @click.prevent="menu='Inventory'">Inventory</a></li>
+                <li class="w-full flex cursor-pointer items-center justify-between px-10"
+                    :class="{'bg-orange-100 w-full text-orange-500': menu === 'Inventory'}"
+                    @click.prevent="menu='Inventory'">
+                    <span class="font-semibold">Inventory</span>
+                    <svg class="w-10 h-10 fill-current" :class="{'bg-orange-100 w-full text-orange-500'}" viewBox=" 0 0
+                        64 64">
+                        <g transform="translate(237.000000, 335.000000)">
+                            <polyline class="st0" id="Fill-35"
+                                points="-191.3,-296.9 -193.3,-294.9 -205,-306.6 -216.7,-294.9 -218.7,-296.9 -205,-310.6      -191.3,-296.9    " />
+                        </g>
+                    </svg>
+                </li>
+                <div class="px-20" x-show="menu === 'Inventory'">
+                    <li class="my-2">Tambahkan Produk</li>
+                    <li class="my-2">Produk Saya</li>
+                </div>
                 <!-- Pengaturan Akun -->
-                <li class="w-full"><a class="inline-block px-14 py-2 font-semibold hover:text-orange-300"
-                        :class="{'bg-orange-100 w-full text-orange-500': menu === 'PengaturanAkun'}" href="#"
-                        @click.prevent="menu='PengaturanAkun'">Pengaturan</a></li>
+                <li class="w-full flex cursor-pointer items-center justify-between px-10"
+                    :class="{'bg-orange-100 w-full text-orange-500': menu === 'PengaturanAkun'}"
+                    @click.prevent="menu='PengaturanAkun'">
+                    <span class="font-semibold">Pengaturan Akun</span>
+                    <svg class="w-10 h-10 fill-current" :class="{'bg-orange-100 w-full text-orange-500'}"
+                        viewBox="0 0 64 64">
+                        <g transform="translate(237.000000, 335.000000)">
+                            <polyline class="st0" id="Fill-35"
+                                points="-191.3,-296.9 -193.3,-294.9 -205,-306.6 -216.7,-294.9 -218.7,-296.9 -205,-310.6      -191.3,-296.9    " />
+                        </g>
+                    </svg>
+                </li>
             </ul>
-            <div>
-                <ul>
-                    <li x-show="menu === 'Dashboard'">Dashboard</li>
-                    <li x-show="menu === 'Pesanan'">Pesanan</li>
-                    <li x-show="menu === 'Keuangan'">Keuangan</li>
-                    <li x-show="menu === 'Inventory'">Inventory</li>
-                    <li x-show="menu === 'PengaturanAkun'">Pengaturan Akun</li>
-                </ul>
-            </div>
         </div>
-        <div class="w-2/3 h-full bg-slate-500">
-            <h1>Hello World</h1>
+        <div class="col-span-9 h-full">
+            <!-- Dashboard -->
+            <div x-show="menu === 'Dashboard'">
+                <!-- Dashboard -->
+                <!-- Bagian Kanan Atas -->
+                <div class="rounded-t-lg bg-white shadow-lg mb-5">
+                    <div class="p-5 rounded-t-lg bg-secondary">
+                        <h1 class="font-bold text-xl">Yang Perlu Dilakukan</h1>
+                        <h2 class="text-sm">Hal-hal yang perlu kami tangani</h2>
+                    </div>
+                    <div class="my-5">
+                        <!-- Atas -->
+                        <div class="mx-5 mb-10 text-center grid grid-cols-4 gap-2 divide-x-2">
+                            <div>
+                                <p>4</p>
+                                <p class="font-medium text-third">Belum Bayar</p>
+                            </div>
+                            <div>
+                                <p>2</p>
+                                <p class="font-medium text-third">Pengiriman Perlu Diproses</p>
+                            </div>
+                            <div>
+                                <p>5</p>
+                                <p class="font-medium text-third">Pengiriman Telah Diproses</p>
+                            </div>
+                            <div>
+                                <p>0</p>
+                                <p class="font-medium text-third">Menunggu Respon Pengembalian</p>
+                            </div>
+                        </div>
+                        <!-- Atas -->
+                        <!-- Bawah -->
+                        <div class="mx-5 text-center grid grid-cols-4 gap-2 divide-x-2">
+                            <div>
+                                <p>0</p>
+                                <p class="font-medium text-third">Menunggu Respon Pembayaran</p>
+                            </div>
+                            <div>
+                                <p>3</p>
+                                <p class="font-medium text-third">Produk Diblokir</p>
+                            </div>
+                            <div>
+                                <p>1</p>
+                                <p class="font-medium text-third">Produk Habis</p>
+                            </div>
+                            <div>
+                                <p>0</p>
+                                <p class="font-medium text-third">Produk Akan Datang</p>
+                            </div>
+                        </div>
+                        <!-- Bawah -->
+                    </div>
+                </div>
+                <!-- Bagian Kanan Atas -->
+                <!-- Bagian Kanan Bawah -->
+                <div class="w-full bg-white shadow-lg p-5 mb-5 rounded-lg">
+                    <h2 class="font-bold text-2xl">Penjualan Saya</h2>
+                    <h3 class="text-base text-third font-medium">Informasi data toko untuk pesanan yang dibayar</h3>
+                    <h4 class="text-base text-third font-medium mb-5">Penjualan</h4>
+                    <div class="w-full flex">
+                        <div class="mr-5">
+                            <img class="w-[400px] h-[200px]" src="/dist/img/1.jpg" alt="chart">
+                        </div>
+                        <div class="w-1/2 flex flex-wrap items-center gap-5">
+                            <div class="w-1/2">
+                                <p class="font-base text-third">Total Pengunjung</p>
+                                <p class="font-bold text-3xl">0</p>
+                                <p class="font-semibold text-sm text-third">vs kemarin 120 Pengunjung</p>
+                            </div>
+                            <div>
+                                <p class="font-base text-third">Produk Dilihat</p>
+                                <p class="font-bold text-3xl">0</p>
+                                <p class="font-semibold text-sm text-third">vs kemarin 10 Produk</p>
+                            </div>
+                            <div class="border-[1px] w-full border-b-third"></div>
+                            <div class="md:w-full">
+                                <p class="font-base text-third">Total Pesanan</p>
+                                <p class="font-bold text-3xl">0</p>
+                                <p class="font-semibold text-sm text-third">vs kemarin 16 Pesanan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bagian Kanan Bawah -->
+                <!-- Dashboard -->
+            </div>
+            <!-- Pesanan -->
+            <div x-show="menu === 'Pesanan'">
+                <!-- Bagian Kanan Atas -->
+                <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 mb-5">
+                    <!-- Menu -->
+                    <div class="my-5">
+                        <div class="w-full mb-5">
+                            <ul class="flex justify-evenly font-semibold">
+                                <li class="items-center">
+                                    <a href="/dist/pages/pesanan/pesanansaya.html">Semua</a>
+                                </li>
+                                <li class="items-center">
+                                    <a href="/dist/pages/pesanan/belumbayar.html">Belum Bayar</a>
+                                </li>
+                                <li class="items-center cursor-pointer">
+                                    <a href="/dist/pages/pesanan/perludikirim/perludiproses.html">Perlu Dikirim</a>
+                                </li>
+                                <li class="items-center">
+                                    <a href="/dist/pages/pesanan/selesai.html">Selesai</a>
+                                </li>
+                                <li class="items-center">
+                                    <a href="/dist/pages/pembatalan/pembatalan.html">Pembatalan</a>
+                                </li>
+                                <li class="items-center">
+                                    <a href="/dist/pages/pengembalian/pengembalian.html">Pengembalian</a>
+                                </li>
+                            </ul>
+                            <div class="w-full static my-5">
+                                <div class="w-full rounded-full border-[1px] border-b-slate-300"></div>
+                                <div class="static -mt-1 h-2 w-36 rounded-full bg-primary"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Menu -->
+                    <!-- Search Box & Date -->
+                    <div class="flex justify-between">
+                        <div class="flex">
+                            <div class="flex border-2 rounded">
+                                <input type="text" class="px-4 w-50" placeholder="Search...">
+                                <button class="flex w-10 justify-center items-center">
+                                    <svg class="text-slate-500 w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex justify-end gap-3">
+                            <div class="flex">
+                                <div class="flex border-2 rounded">
+                                    <div class="flex w-10 justify-center items-center">
+                                        <svg class="text-slate-500 w-5 h-5 fill-current" role="img" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <title>Google Calendar</title>
+                                            <path
+                                                d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.65.671-.793 1.078l1.085.452c.086-.249.224-.461.413-.633.189-.172.445-.257.767-.257.33 0 .602.088.816.264a.86.86 0 0 1 .322.703c0 .33-.12.589-.36.778-.24.19-.535.284-.886.284h-.567v1.085h.633c.407 0 .748.109 1.02.327.272.218.407.499.407.843 0 .336-.129.614-.387.832s-.565.327-.924.327c-.351 0-.651-.103-.897-.311-.248-.208-.422-.502-.521-.881l-1.096.452c.178.616.505 1.082.977 1.401.472.319.984.478 1.538.477a2.84 2.84 0 0 0 1.293-.291c.382-.193.684-.458.902-.794.218-.336.327-.72.327-1.149 0-.429-.115-.797-.344-1.105a2.067 2.067 0 0 0-.881-.689zm2.093-1.931l.602.913L15 10.045v5.744h1.187V8.446h-.827l-2.158 1.557zM22.105 0h-3.289v5.184H24V1.895A1.894 1.894 0 0 0 22.105 0zm-3.289 23.5l4.684-4.684h-4.684V23.5zM0 22.105C0 23.152.848 24 1.895 24h3.289v-5.184H0v3.289z" />
+                                        </svg>
+                                    </div>
+                                    <input type="text" class="px-4 w-30 text-sm" placeholder="11/12/2020 - 12/12/2020">
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex border-2 rounded">
+                                    <button class="flex w-20 justify-center items-center">Unduh</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Search Box & Date -->
+                    <h1 class="mb-10 mt-5 font-bold text-xl">2 Pesanan</h1>
+                    <!-- Menu Produk -->
+                    <div
+                        class="px-3 mb-5 w-full font-medium border-2 border-slate-300 text-sm flex items-center justify-between h-fit rounded-lg bg-secondary">
+                        <p class="w-64">Produk</p>
+                        <p class="w-28">Jumlah Harus Dibayar</p>
+                        <p class="w-20">Status</p>
+                        <p class="w-28">Batas Waktu</p>
+                        <p class="w-32">Semua Jasa Kirim</p>
+                        <p class="w-28">Rincian</p>
+                    </div>
+                    <!-- Menu Produk -->
+                    <!-- Pesanan 1 -->
+                    <div class="flex flex-wrap">
+                        <div class="flex w-full rounded-md">
+                            <div class="p-3 flex items-center w-full justify-between">
+                                <div class="flex">
+                                    <svg class="h-5 w-5" viewBox="0 0 24 24">
+                                        <ellipse cx="12" cy="8" rx="5" ry="6" />
+                                        <path
+                                            d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9    C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
+                                    </svg>
+                                    <p class="ml-5">Fransisca Muntu <span class="ml-5 text-third">12-01-2021</span>
+                                    </p>
+                                </div>
+                                <p>No. Pesanan 2012070M2A1A6P</p>
+                            </div>
+                        </div>
+                        <div class="p-3 w-full font-medium text-sm flex items-center justify-between h-fit">
+                            <div class="flex gap-2 w-64">
+                                <img src="/dist/img/1.jpg" class="grow h-10"></img>
+                                <div class="flex flex-wrap">
+                                    <p class="text-sm">MUKKA</p>
+                                    <p class="text-xs">MUKKA LIP CREAM MATEE</p>
+                                    <p class="text-xs text-third">Variant <span class="text-black">ORANGE</span><br>
+                                        <span class="text-black">x 3</span></p>
+                                </div>
+                            </div>
+                            <div class="w-28">
+                                <p>Rp 32.200</p>
+                                <p class="text-sm text-third">Alfamart</p>
+                            </div>
+                            <div class="w-20">
+                                <p>Selesai</p>
+                            </div>
+                            <div class="w-28">
+                                <p></p>
+                            </div>
+                            <div class="w-32">
+                                <p>J&T Express</p>
+                            </div>
+                            <div class="w-28">
+                                <p class="text-primary">Periksa Rincian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pesanan 1 -->
+                    <div class="mb-5 border-[1px] border-b-slate-300"></div>
+                </div>
+                <!-- Bagian Kanan Atas -->
+                <!-- Line -->
+                <div class="flex grow justify-between gap-1">
+                    <div class="w-20 mb-5 border-2 border-secondary"></div>
+                    <div class="w-20 mb-5 border-2 border-slate-400"></div>
+                    <div class="w-20 mb-5 border-2 border-secondary"></div>
+                    <div class="w-20 mb-5 border-2 border-slate-400"></div>
+                    <div class="w-20 mb-5 border-2 border-secondary"></div>
+                    <div class="w-20 mb-5 border-2 border-slate-400"></div>
+                    <div class="w-20 mb-5 border-2 border-secondary"></div>
+                    <div class="w-20 mb-5 border-2 border-slate-400"></div>
+                    <div class="w-20 mb-5 border-2 border-secondary"></div>
+                    <div class="w-20 mb-5 border-2 border-slate-400"></div>
+                </div>
+                <!-- Line -->
+                <!-- Bagian Kanan Tengah -->
+                <div class="w-full h-fit rounded-lg bg-white shadow-lg p-5 mb-5">
+                    <div class="flex flex-wrap justify-between">
+                        <p>No. Pesanan</p>
+                        <p class="font-semibold">Selesai</p>
+                        <p class="w-full text-md">2012070M2A1A6P</p>
+                    </div>
+                    <div class="my-5">
+                        <p class="text-sm mb-2">Alamat Pengiriman</p>
+                        <p class="font-semibold text-sm ml-5">Fransisca Muntu , 6281358388282</p>
+                        <p class="font-semibold text-[12px] ml-5">Jalan Sawunggaling Perumahan Tawangsari Permai
+                            Blok DD.53 Rt.02 Rw.01 Kletek Taman-Sidoarjo Kode Pos 61257, KAB SIDOARJO, TAMAN, JAWA
+                            TIMUR, ID, 6125</p>
+                    </div>
+                    <p class="text-sm mb-2">Alamat Pengiriman</p>
+                    <p class="text-sm ml-5">J&T Express <span class="font-bold">JP2726938786</span></p>
+                    <div class="w-full font-medium flex justify-between mt-5 mb-2 items-center">
+                        <p class="text-sm">
+                            <div class="h-3 w-3 rounded-full bg-primary"></div>
+                            08-01-2020 12:31
+                        </p>
+                        <p class="text-sm">[THBOJONGLOA]Kurir[Wahyu Apandi] Paket telah diterima (Muntu)</p>
+                        <div class="flex text-primary items-center">
+                            <p class="w-10 font-semibold">Buka</p>
+                            <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" style="enable-background:new 0 0 512 512;"
+                                viewBox="0 0 512 512">
+                                <path
+                                    d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bagian Kanan Tengah -->
+                <!-- Bagian Kanan Bawah -->
+                <div class="w-full h-fit rounded-lg bg-white shadow-lg p-5 mb-5">
+                    <p class="font-medium mb-5">Informasi Pembayaran</p>
+                    <!-- Menu -->
+                    <div
+                        class="px-3 mb-5 w-full font-medium text-sm flex items-center justify-between h-10 rounded-sm bg-secondary">
+                        <p class="w-5 text-center">No</p>
+                        <p class="w-72">Produk</p>
+                        <p class="w-28 text-center">Harga Satuan</p>
+                        <p class="w-20 text-center">Jumlah</p>
+                        <p class="w-28 text-center">Subtotal</p>
+                    </div>
+                    <!-- Menu -->
+                    <!-- Pesanan 1 -->
+                    <div class="flex flex-wrap">
+                        <div class="p-3 w-full font-medium text-sm flex items-center justify-between h-fit">
+                            <div class="w-5 text-center">
+                                <p>1</p>
+                            </div>
+                            <div class="flex gap-2 w-72">
+                                <img src="/dist/img/1.jpg" class="grow h-10"></img>
+                                <div class="flex flex-wrap">
+                                    <p class="text-sm">MUKKA</p>
+                                    <p class="text-xs">MUKKA LIP CREAM MATEE</p>
+                                    <p class="text-xs text-third">Variant <span class="text-black">ORANGE</span><br>
+                                        <span class="text-black">x 3</span></p>
+                                </div>
+                            </div>
+                            <div class="w-28 text-center">
+                                <p>Rp 25.200</p>
+                            </div>
+                            <div class="w-20 text-center">
+                                <p>1</p>
+                            </div>
+                            <div class="w-28 text-center">
+                                <p>25.200</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pesanan 1 -->
+                    <!-- Accordion -->
+                    <div class="relative w-full overflow-hidden">
+                        <input type="checkbox"
+                            class="absolute top-0 inset-x-0 w-full h-12 opacity-0 z-10 cursor-pointer peer">
+                        <div class="h-12 w-full flex items-center">
+                            <div class="self-center h-[1px] w-[650px] mr-5 bg-slate-800"></div>
+                            <p class="text-sm">Lihat rincian penghasilan</p>
+                        </div>
+                        <div
+                            class="absolute top-4 right-3 text-white transition-transform duration-500 rotate-0 peer-checked:rotate-180">
+                            <svg class="h-3 w-3  transform transition-transform duration-500" viewBox="0 0 512 512">
+                                <path
+                                    d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z" />
+                            </svg>
+                        </div>
+                        <div class="overflow-hidden transition-all duration-500 max-h-0 peer-checked:max-h-96">
+                            <div class="text-right">
+                                <div class="grid grid-cols-12 gap-5 divide-x-[1px] divide-third">
+                                    <p class="font-semibold col-start-8 col-span-2">Total Pesanan</p>
+                                    <p class="font-semibold col-start-10 col-span-3">Rp 25.200</p>
+                                </div>
+                                <div class="grid grid-cols-12 text-third gap-5 divide-x-[1px] divide-third text-right">
+                                    <p class="font-normal col-start-8 col-span-2">Harga Produk</p>
+                                    <p class="text-sm font-semibold col-start-10 col-span-3">Rp 25.000</p>
+                                </div>
+                                <div class="grid grid-cols-12 gap-5 divide-x-[1px] divide-third">
+                                    <p class="font-semibold col-start-7 col-span-3">Subtotal Ongkos Kirim</p>
+                                    <p class="font-semibold col-start-10 col-span-3">Rp 0</p>
+                                </div>
+                                <div class="grid grid-cols-12 gap-5 divide-x-[1px] text-third divide-third text-right">
+                                    <p class="font-normal col-start-7 col-span-3">Ongkir Dibayar Pembeli</p>
+                                    <p class="text-sm font-semibold col-start-10 col-span-3">Rp 10.000</p>
+                                </div>
+                                <div class="grid grid-cols-12 gap-5 divide-x-[1px] text-third divide-third text-right">
+                                    <p class="col-start-4 font-normal col-span-6">Ongkir yang diteruskan oleh
+                                        Beemall kepada
+                                        kurir</p>
+                                    <p class="text-sm font-semibold col-start-10 col-span-3">-Rp 10.000</p>
+                                </div>
+                                <div class="grid grid-cols-12 gap-5 divide-x-[1px] divide-third text-right">
+                                    <p class="font-semibold self-center col-start-8 col-span-2">Total Penjualan</p>
+                                    <p class="font-semibold text-2xl text-primary col-start-10 col-span-3">Rp 25.200
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion -->
+                </div>
+                <!-- Bagian Kanan Bawah -->
+                <!-- Bagian Kanan Pembayaran Pembeli -->
+                <div class="w-full h-fit rounded-lg bg-white shadow-lg p-5 mb-5">
+                    <p class="font-medium">Pembayaran Pembeli</p>
+                    <!-- Accordion -->
+                    <div class="relative w-full">
+                        <input type="checkbox"
+                            class="absolute -top-5 inset-x-0 w-full h-12 opacity-0 z-10 cursor-pointer peer">
+                        <div class="h-12 w-full flex items-center">
+                            <div class="self-center h-[1px] w-full mr-5 bg-slate-800">
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -top-5 right-3 text-white transition-transform duration-500 rotate-0 peer-checked:rotate-180">
+                            <svg class="h-3 w-3  transform transition-transform duration-500" viewBox="0 0 512 512">
+                                <path
+                                    d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z" />
+                            </svg>
+                        </div>
+                        <div class="overflow-hidden transition-all duration-500 max-h-0 peer-checked:max-h-96">
+                            <div class="text-right">
+                                <div class="grid grid-cols-12 gap-5 divide-x-[1px] divide-third">
+                                    <p class="font-semibold col-start-8 col-span-2">Total Pesanan</p>
+                                    <p class="font-semibold col-start-10 col-span-3">Rp 25.200</p>
+                                </div>
+                                <div class="grid grid-cols-12 gap-5 divide-x-[1px] divide-third">
+                                    <p class="font-semibold col-start-7 col-span-3">Ongkos Kirim</p>
+                                    <p class="text-sm text-third font-semibold col-start-10 col-span-3">Rp 10.000
+                                    </p>
+                                </div>
+                                <div class="grid grid-cols-12 gap-5 divide-x-[1px] divide-third">
+                                    <p class="font-semibold col-start-7 col-span-3">Voucher</p>
+                                    <p class="text-sm text-third font-semibold col-start-10 col-span-3">-Rp 0</p>
+                                </div>
+                                <div class="grid grid-cols-12 gap-5 divide-x-[1px] divide-third">
+                                    <p class="font-semibold col-start-7 col-span-3">BeePoint</p>
+                                    <p class="font-semibold text-sm text-third col-start-10 col-span-3"><span
+                                            class="text-primary">(0 BeePoint)</span> Rp 0</p>
+                                </div>
+                                <div class="grid grid-cols-12 gap-5 divide-x-[1px] divide-third text-right">
+                                    <p class="font-semibold self-center col-start-7 col-span-3">Total Pembayaran
+                                        Pembelian
+                                    </p>
+                                    <p class="font-semibold text-2xl text-primary col-start-10 col-span-3">Rp 25.200
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion -->
+                </div>
+                <!-- Bagian Kanan Pembayaran Pembeli -->
+            </div>
+
         </div>
     </div>
 </body>

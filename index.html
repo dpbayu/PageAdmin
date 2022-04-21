@@ -811,22 +811,41 @@
                                 <p class="font-bold text-xl">1 Pesanan <br> <span
                                         class="text-sm font-normal text-third">12-01-2021</span></p>
                             </div>
-                            <div class="grid grid-cols-12 divide-x-2">
+                            <div class="grid grid-cols-12 divide-x-2 my-2" x-data="{ tab: 'perludiproses' }">
                                 <div class="col-start-1 col-span-3 row-start-2">
-                                    <a class="px-5 font-bold text-primary"
-                                        href="/dist/pages/pesanan/perludikirim/perludiproses.html">Perlu Diproses</a>
+                                    <a class="px-5 font-bold hover:text-primary"
+                                        :class="{'text-orange-primary': tab === 'perludiproses'}" href="#">Perlu
+                                        Diproses</a>
                                 </div>
                                 <div class="col-start-3 col-span-3 row-start-2">
-                                    <a class="px-5 font-bold"
-                                        href="/dist/pages/pesanan/perludikirim/telahdiproses.html">Telah Diproses</a>
+                                    <a class="px-5 font-bold hover:text-primary"
+                                        :class="{'text-orange-primary': tab === 'telahdiproses'}" href="#">Telah
+                                        Diproses</a>
                                 </div>
                                 <div class="col-span-2 col-start-11 mb-2 row-start-2">
                                     <a class="h-fit w-32 rounded-sm bg-third px-3 text-center text-white" href="#">
                                         Proses Order
                                     </a>
                                 </div>
+                                <div x-show="tab === 'perludiproses'">Tab 1 Content. Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Totam
+                                    accusamus placeat, alias libero nesciunt, atque quidem veniam debitis quo vero
+                                    illum? Voluptate quam
+                                    fugit mollitia ipsum dolorem quae hic, fugiat facere sequi. Molestias deleniti esse
+                                    maxime eveniet quae
+                                    mollitia blanditiis, dicta quidem veritatis minus reprehenderit assumenda possimus
+                                    enim nisi
+                                    perferendis.</div>
+                                <!-- Text 2 -->
+                                <div x-show="tab === 'telahdiproses'">Tab 2 Content. Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Totam
+                                    accusamus placeat, alias
+                                    libero nesciunt, atque quidem veniam debitis quo vero illum? Voluptate quam fugit
+                                    mollitia ipsum dolorem
+                                    quae hic, fugiat facere sequi. Molestias deleniti esse maxime eveniet quae mollitia
+                                    blanditiis, dicta
+                                    quidem veritatis minus reprehenderit assumenda possimus enim nisi perferendis.</div>
                             </div>
-                            <div class="w-full my-2 border-slate-200 border-[1px]"></div>
                             <!-- Menu Produk -->
                             <div
                                 class="px-3 mb-5 w-full font-medium border-2 border-slate-300 text-sm flex items-center justify-between h-fit rounded-lg bg-secondary">

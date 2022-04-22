@@ -88,14 +88,14 @@
                             <li class="my-2 px-14 py-1"
                                 :class="{'bg-orange-100 w-full text-orange-500': menu === 'Tarik'}">Tarik Saldo
                         </div>
-                        <!-- <div @click.prevent="menu='Laporan'">
+                        <div @click.prevent="menu='Laporan'">
                             <li class="my-2 px-14 py-1"
-                                :class="{'bg-orange-100 w-full text-orange-500': menu === 'Tarik">Laporan
-                        </div> -->
-                        <!-- <div @click.prevent="menu='Pengaturan'">
+                                :class="{'bg-orange-100 w-full text-orange-500': menu === 'Laporan'}">Laporan
+                        </div>
+                        <div @click.prevent="menu='Pengaturan'">
                             <li class="my-2 px-14 py-1"
-                                :class="{'bg-orange-100 w-full text-orange-500': menu === 'Tarik">Pengaturan
-                        </div> -->
+                                :class="{'bg-orange-100 w-full text-orange-500': menu === 'Tarik'">Pengaturan
+                        </div>
                     </ul>
                 </li>
                 <!-- Inventory -->
@@ -2925,8 +2925,9 @@
                 <div x-data="{ tab: 'invoice' }">
                     <div class="flex">
                         <div class="">
-                            <a class="py-2 px-10 rounded-l-md bg-white border-2" :class="{'text-orange-500 bg-orange-100': tab === 'invoice'}"
-                                href="#" @click.prevent="tab = 'invoice'">Invoice</a>
+                            <a class="py-2 px-10 rounded-l-md bg-white border-2"
+                                :class="{'text-orange-500 bg-orange-100': tab === 'invoice'}" href="#"
+                                @click.prevent="tab = 'invoice'">Invoice</a>
                         </div>
                         <div class="">
                             <a class="py-2 px-10 rounded-r-md bg-white border-2"
@@ -3135,6 +3136,213 @@
                 </div>
             </div>
             <!-- Tarik Saldo -->
+            <!-- Laporan -->
+            <div x-show="menu === 'Laporan'">
+                <div class="relative w-full">
+                    <!-- Bagian Kanan Atas -->
+                    <div class="flex w-full justify-between items-center">
+                        <div class="w-full flex h-fit mt-5 font-medium">
+                            <a class="py-2 px-10 border rounded-l-md bg-orange-100 text-primary"
+                                href="#">Penjualan</a>
+                            <a class="py-2 px-10 border rounded-r-md bg-white"
+                                href="#">Penarikan</a>
+                        </div>
+                        <div class="flex w-full mt-7 items-center">
+                            <!-- Date -->
+                            <div class="mr-5 flex gap-3">
+                                <div class=" justify-center items-center text-primary">
+                                    <svg class="w-7 h-7 fill-current" viewBox="0 0 32 32">
+                                        <g>
+                                            <path
+                                                d="M29.334,3H25V1c0-0.553-0.447-1-1-1s-1,0.447-1,1v2h-6V1c0-0.553-0.448-1-1-1s-1,0.447-1,1v2H9V1   c0-0.553-0.448-1-1-1S7,0.447,7,1v2H2.667C1.194,3,0,4.193,0,5.666v23.667C0,30.806,1.194,32,2.667,32h26.667   C30.807,32,32,30.806,32,29.333V5.666C32,4.193,30.807,3,29.334,3z M30,29.333C30,29.701,29.701,30,29.334,30H2.667   C2.299,30,2,29.701,2,29.333V5.666C2,5.299,2.299,5,2.667,5H7v2c0,0.553,0.448,1,1,1s1-0.447,1-1V5h6v2c0,0.553,0.448,1,1,1   s1-0.447,1-1V5h6v2c0,0.553,0.447,1,1,1s1-0.447,1-1V5h4.334C29.701,5,30,5.299,30,5.666V29.333z" />
+                                            <rect height="3" width="4" x="7" y="12" />
+                                            <rect height="3" width="4" x="7" y="17" />
+                                            <rect height="3" width="4" x="7" y="22" />
+                                            <rect height="3" width="4" x="14" y="22" />
+                                            <rect height="3" width="4" x="14" y="17" />
+                                            <rect height="3" width="4" x="14" y="12" />
+                                            <rect height="3" width="4" x="21" y="22" />
+                                            <rect height="3" width="4" x="21" y="17" />
+                                            <rect height="3" width="4" x="21" y="12" />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <input type="text"
+                                    class="px-4 w-[335px] h-7 text-sm border border[1px] border-third rounded-sm"
+                                    placeholder="Dalam 1 bulan terakhir | 01-01-2021 : 01:31:2021">
+                            </div>
+                            <!-- Date -->
+                            <a class="px-2 py-1 h-fit bg-primary w-32 text-white rounded-md" href="#">Unduh Laporan</a>
+                        </div>
+                    </div>
+                    <!-- Bagian Kanan Atas -->
+                    <!-- Bagian Kanan Bawah -->
+                    <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-5">
+                        <!-- Menu -->
+                        <div class="py-5">
+                            <div class="w-full mb-5">
+                                <ul class="flex justify-evenly">
+                                    <li class="items-center">
+                                        <p class="font-semibold pl-5">Semua Pesanan</p>
+                                    </li>
+                                    <li class="items-center">
+                                        <p class="font-semibold pl-5">Pesanan Baru</p>
+                                    </li>
+                                    <li class="items-center">
+                                        <p class="font-semibold pl-5">Siap Dikirim</p>
+                                    </li>
+                                    <li class="items-center">
+                                        <p class="font-semibold pl-5">Dalam Pengiriman</p>
+                                    </li>
+                                    <li class="items-center">
+                                        <p class="font-semibold pl-5">Selesai</p>
+                                    </li>
+                                    <li class="items-center">
+                                        <p class="font-semibold pl-5">Dibatalkan</p>
+                                    </li>
+                                </ul>
+                                <div class="w-full relative my-5">
+                                    <div class="w-full rounded-full border-[1px] border-b-slate-300"></div>
+                                    <div class="absolute -top-1 left-0 h-2 w-40 rounded-full bg-primary"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Menu -->
+                        <!-- Search Box ,Queue, Date -->
+                        <div class="flex w-full justify-between my-5">
+                            <div class="flex">
+                                <div class="flex border-2 rounded h-fit">
+                                    <input type="text" class="px-4 w-64"
+                                        placeholder="Cari nama produk, sku, nomor resi, nomor pesanan">
+                                    <button class="flex w-10 justify-center items-center">
+                                        <svg class="text-slate-500 w-5 h-5 fill-current"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path
+                                                d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="w-1/2 flex justify-end gap-3">
+                                <div class="flex">
+                                    <div class="flex border-2 rounded h-fit">
+                                        <input type="text" class="px-4 w-28 text-sm" placeholder="Urut berdasarkan">
+                                        <div class="flex w-10 justify-center items-center">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
+                                                <g>
+                                                    <g transform="translate(237.000000, 335.000000)">
+                                                        <polyline class="st0" id="Fill-35"
+                                                            points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 flex justify-end gap-3">
+                                <div class="flex">
+                                    <div class="flex border-2 rounded h-fit">
+                                        <input type="text" class="px-4 w-30 text-sm"
+                                            placeholder="11/12/2020 - 12/12/2020">
+                                        <div class="flex w-10 justify-center items-center">
+                                            <svg class="text-slate-500 w-5 h-5 fill-current" role="img"
+                                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.65.671-.793 1.078l1.085.452c.086-.249.224-.461.413-.633.189-.172.445-.257.767-.257.33 0 .602.088.816.264a.86.86 0 0 1 .322.703c0 .33-.12.589-.36.778-.24.19-.535.284-.886.284h-.567v1.085h.633c.407 0 .748.109 1.02.327.272.218.407.499.407.843 0 .336-.129.614-.387.832s-.565.327-.924.327c-.351 0-.651-.103-.897-.311-.248-.208-.422-.502-.521-.881l-1.096.452c.178.616.505 1.082.977 1.401.472.319.984.478 1.538.477a2.84 2.84 0 0 0 1.293-.291c.382-.193.684-.458.902-.794.218-.336.327-.72.327-1.149 0-.429-.115-.797-.344-1.105a2.067 2.067 0 0 0-.881-.689zm2.093-1.931l.602.913L15 10.045v5.744h1.187V8.446h-.827l-2.158 1.557zM22.105 0h-3.289v5.184H24V1.895A1.894 1.894 0 0 0 22.105 0zm-3.289 23.5l4.684-4.684h-4.684V23.5zM0 22.105C0 23.152.848 24 1.895 24h3.289v-5.184H0v3.289z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Search Box, Queue, Date -->
+                        <!-- Table -->
+                        <table class="table-auto w-full">
+                            <thead class="bg-orange-100 rounded-md">
+                                <tr class="text-sm">
+                                    <th class="font-normal py-3">SKU</th>
+                                    <th class="font-normal">Produk</th>
+                                    <th class="font-normal">Brand</th>
+                                    <th class="font-normal">Variant</th>
+                                    <th class="font-normal">Jumlah</th>
+                                    <th class="font-normal">Harga</th>
+                                    <th class="font-normal">Berat</th>
+                                    <th class="font-normal">Pengiriman</th>
+                                    <th class="font-normal">Ongkos Kirim</th>
+                                    <th class="font-normal">Subtotal</th>
+                                    <th class="font-normal">Metode Pembayaran</th>
+                                    <th class="font-normal">Grand Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-sm border-b-[1px] border-third">
+                                    <td class="text-center py-3">1</td>
+                                    <td class="text-center">ABC</td>
+                                    <td class="text-center">ABCD</td>
+                                    <td class="text-center">QWER</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">7800</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">JNE</td>
+                                    <td class="text-center">7800</td>
+                                    <td class="text-center">7800</td>
+                                    <td class="text-center">BCA TRANSFER</td>
+                                    <td class="text-center">7800</td>
+                                </tr>
+                                <tr class="text-sm border-b-[1px] border-third">
+                                    <td class="text-center py-3">1</td>
+                                    <td class="text-center">ABC</td>
+                                    <td class="text-center">ABCD</td>
+                                    <td class="text-center">QWER</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">7800</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">JNE</td>
+                                    <td class="text-center">7800</td>
+                                    <td class="text-center">7800</td>
+                                    <td class="text-center">BCA TRANSFER</td>
+                                    <td class="text-center">7800</td>
+                                </tr>
+                                <tr class="text-sm border-b-[1px] border-third">
+                                    <td class="text-center py-3">1</td>
+                                    <td class="text-center">ABC</td>
+                                    <td class="text-center">ABCD</td>
+                                    <td class="text-center">QWER</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">7800</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">JNE</td>
+                                    <td class="text-center">7800</td>
+                                    <td class="text-center">7800</td>
+                                    <td class="text-center">BCA TRANSFER</td>
+                                    <td class="text-center">7800</td>
+                                </tr>
+                                <tr class="text-sm border-b-[1px] border-third">
+                                    <td class="text-center py-3">1</td>
+                                    <td class="text-center">ABC</td>
+                                    <td class="text-center">ABCD</td>
+                                    <td class="text-center">QWER</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">7800</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">JNE</td>
+                                    <td class="text-center">7800</td>
+                                    <td class="text-center">7800</td>
+                                    <td class="text-center">BCA TRANSFER</td>
+                                    <td class="text-center">7800</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Table -->
+                        <p class="absolute pt-10 right-10"><span class="text-primary">1</span> 2 3 4 5 ... 50</p>
+                    </div>
+                    <!-- Kanan Bawah -->
+                </div>
+            </div>
+            <!-- Laporan -->
         </div>
         <!-- Menu -->
     </div>

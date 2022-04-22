@@ -34,8 +34,8 @@
                     <span class="font-semibold">Dashboard</span>
                 </li>
                 <!-- Pesanan -->
-                <li class="w-full items-center cursor-pointer justify-between"
-                    @click.prevent="menu='Pesanan'" x-data="{ open: false }">
+                <li class="w-full items-center cursor-pointer justify-between" @click.prevent="menu='Pesanan'"
+                    x-data="{ open: false }">
                     <div class="flex justify-between px-10" x-on:click="open = ! open">
                         <button class="font-semibold">Pesanan</button>
                         <svg class="w-10 h-10 fill-current" viewBox=" 0 0
@@ -47,23 +47,31 @@
                         </svg>
                     </div>
                     <ul class="my-2 w-full" x-show="open">
-                        <li class="my-2 px-14" :class="{'bg-orange-100 w-full text-orange-500': menu === 'Pesanan'}">Pesanan Saya</li>
-                        <li class="my-2 px-14">Pembatalan</li>
-                        <li class="my-2 px-14">Pengembalian</li>
+                        <li class="my-2 px-14 py-1" :class="{'bg-orange-100 w-full text-orange-500': menu === 'Pesanan'}">
+                            Pesanan Saya</li>
+                        <li class="my-2 px-14 py-1">Pembatalan</li>
+                        <li class="my-2 px-14 py-1">Pengembalian</li>
                     </ul>
                 </li>
                 <!-- Keuangan -->
-                <li class="w-full flex cursor-pointer items-center justify-between px-10"
-                    :class="{'bg-orange-100 w-full text-orange-500': menu === 'Keuangan'}"
-                    @click.prevent="menu='Keuangan'">
-                    <span class="font-semibold">Keuangan</span>
-                    <svg class="w-10 h-10 fill-current" :class="{'bg-orange-100 w-full text-orange-500'}" viewBox=" 0 0
+                <li class="w-full items-center cursor-pointer justify-between" @click.prevent="menu='Keuangan'"
+                    x-data="{ open: false }">
+                    <div class="flex justify-between px-10" x-on:click="open = ! open">
+                        <button class="font-semibold">Keuangan</button>
+                        <svg class="w-10 h-10 fill-current" viewBox=" 0 0
                         64 64">
-                        <g transform="translate(237.000000, 335.000000)">
-                            <polyline class="st0" id="Fill-35"
-                                points="-191.3,-296.9 -193.3,-294.9 -205,-306.6 -216.7,-294.9 -218.7,-296.9 -205,-310.6      -191.3,-296.9    " />
-                        </g>
-                    </svg>
+                            <g transform="translate(237.000000, 335.000000)">
+                                <polyline class="st0" id="Fill-35"
+                                    points="-191.3,-296.9 -193.3,-294.9 -205,-306.6 -216.7,-294.9 -218.7,-296.9 -205,-310.6      -191.3,-296.9    " />
+                            </g>
+                        </svg>
+                    </div>
+                    <ul class="my-2 w-full" :class="{'bg-orange-100 w-full text-orange-500': menu === 'Keuangan'}"
+                        x-show="open">
+                        <li class="my-2 px-14">Pesanan Saya</li>
+                        <li class="my-2 px-14">Pembatalan</li>
+                        <li class="my-2 px-14">Pengembalian</li>
+                    </ul>
                 </li>
                 <!-- Inventory -->
                 <li class="w-full flex cursor-pointer items-center justify-between px-10"
@@ -2101,7 +2109,7 @@
         </div>
         <!-- Menu -->
     </div>
-    
+
 </body>
 
 </html>

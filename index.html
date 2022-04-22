@@ -34,8 +34,7 @@
                     <span class="font-semibold">Dashboard</span>
                 </li>
                 <!-- Pesanan -->
-                <li class="w-full items-center cursor-pointer justify-between" @click.prevent="menu='Pesanan'"
-                    x-data="{ open: false }">
+                <li class="w-full items-center cursor-pointer justify-between" x-data="{ open: false }">
                     <div class="flex justify-between px-10" x-on:click="open = ! open">
                         <button class="font-semibold">Pesanan</button>
                         <svg class="w-10 h-10 fill-current" viewBox=" 0 0
@@ -46,12 +45,15 @@
                             </g>
                         </svg>
                     </div>
-                    <ul class="my-2 w-full" x-show="open">
-                        <li class="my-2 px-14 py-1" :class="{'bg-orange-100 w-full text-orange-500': menu === 'Pesanan'}">
-                            Pesanan Saya</li>
-                        <li class="my-2 px-14 py-1">Pembatalan</li>
-                        <li class="my-2 px-14 py-1">Pengembalian</li>
-                    </ul>
+                    <div @click.prevent="menu='Pesanan'">
+                        <ul class="my-2 w-full" x-show="open">
+                            <li class="my-2 px-14 py-1"
+                                :class="{'bg-orange-100 w-full text-orange-500': menu === 'Pesanan'}">
+                                Pesanan Saya</li>
+                            <li class="my-2 px-14 py-1">Pembatalan</li>
+                            <li class="my-2 px-14 py-1">Pengembalian</li>
+                        </ul>
+                    </div>
                 </li>
                 <!-- Keuangan -->
                 <li class="w-full items-center cursor-pointer justify-between" @click.prevent="menu='Keuangan'"

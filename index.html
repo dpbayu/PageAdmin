@@ -94,7 +94,7 @@
                         </div>
                         <div @click.prevent="menu='Pengaturan'">
                             <li class="my-2 px-14 py-1"
-                                :class="{'bg-orange-100 w-full text-orange-500': menu === 'Tarik'">Pengaturan
+                                :class="{'bg-orange-100 w-full text-orange-500': menu === 'Pengaturan'}">Pengaturan
                         </div>
                     </ul>
                 </li>
@@ -3554,6 +3554,58 @@
                 </div>
             </div>
             <!-- Laporan -->
+            <!-- Pengaturan -->
+            <div x-show="menu === 'Pengaturan'">
+                <div class="w-[700px] h-fit rounded-lg bg-white shadow-lg px-5 pb-1 mb-5">
+                    <div class="grid grid-cols-12 font-bold text-xl mt-5">
+                        <h1 class="col-start-1 col-span-4">Masukan PIN Lama</h1>
+                        <div class="col-start-5 col-span-full flex flex-wrap">
+                            <input type="text"
+                                class="px-4 grow h-10 text-sm border border[1px] border-third rounded-sm">
+                            <p class="text-sm font-normal">Masukan angka, tidak di anjurkan tanggal lahir, angka
+                                berulang</p>
+                        </div>
+                    </div>
+                    <!-- Line -->
+                    <div class="flex grow justify-between gap-1 my-10">
+                        <div class="w-20 mb-5 border-2 border-secondary"></div>
+                        <div class="w-20 mb-5 border-2 border-slate-400"></div>
+                        <div class="w-20 mb-5 border-2 border-secondary"></div>
+                        <div class="w-20 mb-5 border-2 border-slate-400"></div>
+                        <div class="w-20 mb-5 border-2 border-secondary"></div>
+                        <div class="w-20 mb-5 border-2 border-slate-400"></div>
+                        <div class="w-20 mb-5 border-2 border-secondary"></div>
+                        <div class="w-20 mb-5 border-2 border-slate-400"></div>
+                        <div class="w-20 mb-5 border-2 border-secondary"></div>
+                        <div class="w-20 mb-5 border-2 border-slate-400"></div>
+                    </div>
+                    <!-- Line -->
+                    <div class="grid grid-cols-12 font-bold text-xl">
+                        <h1 class="col-start-1 col-span-4 self-center">Masukan PIN Baru</h1>
+                        <div class="col-start-5 col-span-full flex flex-wrap">
+                            <input type="text"
+                                class="px-4 grow h-10 text-sm border border[1px] border-third rounded-sm">
+                            <p class="text-sm font-normal">Masukan angka, tidak di anjurkan tanggal lahir, angka
+                                berulang</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-12 font-bold text-xl mt-5">
+                        <h1 class="col-start-1 col-span-4 self-center">Konfirmasi PIN Baru</h1>
+                        <div class="col-start-5 col-span-full flex flex-wrap">
+                            <input type="text"
+                                class="px-4 grow h-10 text-sm border border[1px] border-third rounded-sm">
+                        </div>
+                    </div>
+                    <div class="flex w-full justify-end mb-5 text-white mt-10 gap-5">
+                        <a class="p-1 rounded-md flex justify-center bg-primary w-40"
+                            href="/dist/pages/popup/popupberhasil.html">Simpan</a>
+                        <a class="p-1 rounded-md flex justify-center bg-primary w-40"
+                            href="/dist/pages/keuangan/pengaturan/masukanpinbaru.html">Ubah</a>
+                        <a class="p-1 rounded-md flex justify-center bg-primary w-40" href="#">Lupa PIN</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pengaturan -->
         </div>
         <!-- Menu -->
     </div>

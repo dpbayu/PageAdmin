@@ -22,9 +22,9 @@
     <title>Website Alpine JS</title>
 </head>
 
-<body>
+<body class="bg-rose-500">
     <div class="container h-fit grid grid-cols-12 mx-10 my-10" x-data="{menu:'Dashboard'}">
-        <div class="col-span-3 h-full bg-orange-50 py-3 mr-5">
+        <div class="col-span-3 h-full bg-orange-200 py-3 mr-5 rounded-lg">
             <h1 class="text-2xl font-bold mb-5 px-5">Menu</h1>
             <ul class="flex flex-col">
                 <!-- Dashboard -->
@@ -135,7 +135,7 @@
             <div x-show="menu === 'Dashboard'">
                 <!-- Dashboard -->
                 <!-- Bagian Kanan Atas -->
-                <div class="rounded-t-lg bg-white shadow-lg mb-5">
+                <div class="rounded-lg bg-white shadow-lg mb-5">
                     <div class="p-5 rounded-t-lg bg-secondary">
                         <h1 class="font-bold text-xl">Yang Perlu Dilakukan</h1>
                         <h2 class="text-sm">Hal-hal yang perlu kami tangani</h2>
@@ -185,7 +185,7 @@
                 </div>
                 <!-- Bagian Kanan Atas -->
                 <!-- Bagian Kanan Bawah -->
-                <div class="w-full bg-white shadow-lg p-5 mb-5 rounded-lg">
+                <div class="w-full bg-white shadow-lg p-5 rounded-lg">
                     <h2 class="font-bold text-2xl">Penjualan Saya</h2>
                     <h3 class="text-base text-third font-medium">Informasi data toko untuk pesanan yang dibayar</h3>
                     <h4 class="text-base text-third font-medium mb-5">Penjualan</h4>
@@ -219,9 +219,9 @@
             <!-- Pesanan -->
             <div x-show="menu === 'Pesanan'">
                 <!-- Menu -->
-                <div class="my-5" x-data="{ tab: 'semua' }">
-                    <div class="w-full mb-5">
-                        <ul class="flex justify-evenly font-semibold">
+                <div x-data="{ tab: 'semua' }">
+                    <div class="w-full">
+                        <ul class="flex justify-evenly font-semibold bg-white rounded-t-lg pt-5">
                             <li class="-mb-px mr-1">
                                 <a class="inline-block pb-5 pt-2 px-4 font-semibold hover:text-orange-600"
                                     :class="{'text-orange-500 border-orange-700 border-b-2': tab === 'semua'}" href="#"
@@ -257,7 +257,7 @@
                     <!-- Menu Semua -->
                     <div x-show="tab === 'semua'">
                         <!-- Bagian Kanan Atas -->
-                        <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-1 mb-5">
+                        <div class="w-full h-fit rounded-b-lg bg-white shadow-lg p-5 pb-1 mb-5">
                             <!-- Search Box & Date -->
                             <div class="flex justify-between">
                                 <div class="flex">
@@ -503,7 +503,7 @@
                         </div>
                         <!-- Bagian Kanan Bawah -->
                         <!-- Bagian Kanan Pembayaran Pembeli -->
-                        <div class="w-full h-fit rounded-lg bg-white shadow-lg p-5 mb-5">
+                        <div class="w-full h-fit rounded-lg bg-white shadow-lg p-5">
                             <p class="font-medium">Pembayaran Pembeli</p>
                             <!-- Accordion -->
                             <div class="relative w-full">
@@ -561,7 +561,7 @@
                     <!-- Menu Belum Bayar -->
                     <div x-show="tab === 'belumbayar'">
                         <!-- Bagian Kanan Atas -->
-                        <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-1 mb-5">
+                        <div class="w-full h-fit rounded-b-lg bg-white shadow-lg p-5 pb-1 mb-5">
                             <!-- Search Box & Date -->
                             <div class="flex justify-between">
                                 <div class="flex">
@@ -780,8 +780,7 @@
                         </div>
                         <!-- Bagian Kanan Bawah -->
                         <!-- Bagian Kanan Pembayaran Pembeli -->
-                        <div
-                            class="w-full flex justify-center items-center h-fit rounded-lg bg-white shadow-lg p-5 mb-5">
+                        <div class="w-full flex justify-center items-center h-fit rounded-lg bg-white shadow-lg p-5">
                             <p class="w-full font-medium">Pembayaran Pembeli</p>
                             <p class="w-[100px] font-medium">Rp 154.000</p>
                             <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -795,9 +794,9 @@
                     </div>
                     <!-- Menu Perlu Dikirim -->
                     <div x-show="tab === 'perludikirim'">
-                        <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-1 mb-5">
+                        <div class="w-full h-fit rounded-lg pb-1">
                             <!-- Search Box & Date -->
-                            <div class="flex justify-between">
+                            <div class="flex justify-between bg-white pt-5 px-5">
                                 <div class="flex">
                                     <div class="flex border-2 rounded">
                                         <input type="text" class="px-4 w-50" placeholder="Search...">
@@ -833,13 +832,13 @@
                                 </div>
                             </div>
                             <!-- Search Box & Date -->
-                            <div class="flex my-5 justify-between">
+                            <div class="flex py-5 justify-between px-5 bg-white">
                                 <p class="font-bold text-xl">1 Pesanan <br> <span
                                         class="text-sm font-normal text-third">12-01-2021</span></p>
                             </div>
                             <!-- Menu Perlu Diproses -->
                             <div x-data="{ tab: 'perludiproses' }">
-                                <div class="grid grid-cols-12 divide-x-2 border-1 border-b my-2">
+                                <div class="bg-white grid grid-cols-12 divide-x-2 border-1 border-b">
                                     <div class="col-start-1 col-span-3 row-start-2">
                                         <a class="px-5 font-bold hover:text-primary"
                                             :class="{'text-orange-500': tab === 'perludiproses'}" href="#"
@@ -855,72 +854,76 @@
                                 </div>
                                 <!-- Bagian Perlu Diproses -->
                                 <div class="col-start-1 row-start-3 col-span-12" x-show="tab === 'perludiproses'">
-                                    <div class="w-full -mt-10 mb-5 flex place-content-end">
-                                        <a class="h-fit w-32 rounded-sm bg-primary px-3 text-center text-white"
-                                            href="#">
-                                            Proses Order
-                                        </a>
-                                    </div>
-                                    <!-- Menu Produk -->
-                                    <div
-                                        class="px-3 mb-5 w-full font-medium border-2 border-slate-300 text-sm flex items-center justify-between h-fit rounded-lg bg-secondary">
-                                        <p class="w-64">Produk</p>
-                                        <p class="w-28">Jumlah Harus Dibayar</p>
-                                        <p class="w-20">Status</p>
-                                        <p class="w-28">Batas Waktu</p>
-                                        <p class="w-32">Semua Jasa Kirim</p>
-                                        <p class="w-28">Rincian</p>
-                                    </div>
-                                    <!-- Menu Produk -->
-                                    <!-- Pesanan 1 -->
-                                    <div class="flex flex-wrap border-2 border-slate-300 rounded-lg mb-5">
-                                        <div class="flex w-full border-b-2 border-slate-300">
-                                            <div class="p-3 flex items-center w-full justify-between">
-                                                <div class="flex">
-                                                    <svg class="h-5 w-5 fill-current text-secondary"
-                                                        viewBox="0 0 24 24">
-                                                        <ellipse cx="12" cy="8" rx="5" ry="6" />
-                                                        <path
-                                                            d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9    C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
-                                                    </svg>
-                                                    <p class="ml-5">Fox51 <span
-                                                            class="ml-5 text-third">12-01-2021</span>
-                                                    </p>
-                                                </div>
-                                                <p>No. Pesanan 2012070M2A1A6P</p>
-                                            </div>
+                                    <!-- Bagian Atas -->
+                                    <div class="w-full h-fit rounded-b-lg bg-white shadow-lg p-5 mb-5">
+                                        <div class="w-full -mt-14 mb-5 flex place-content-end">
+                                            <a class="h-fit w-32 rounded-sm bg-primary px-3 text-center text-white"
+                                                href="#">
+                                                Proses Order
+                                            </a>
                                         </div>
+                                        <!-- Menu Produk -->
                                         <div
-                                            class="p-3 w-full font-medium text-sm flex items-center justify-between h-fit">
-                                            <div class="flex gap-2 w-64">
-                                                <img src="/dist/img/1.jpg" class="grow h-10"></img>
-                                                <div class="flex flex-wrap">
-                                                    <p class="text-sm">CAREMAX</p>
-                                                    <p class="text-xs">CareMax Disposible Mask isi 50pcs</p>
-                                                    <p class="text-xs text-third">Variant <span
-                                                            class="text-black">ORANGE</span><br>
-                                                        <span class="text-black">x 3</span></p>
+                                            class="px-3 mb-5 w-full font-medium border-2 border-slate-300 text-sm flex items-center justify-between h-fit rounded-lg bg-secondary">
+                                            <p class="w-64">Produk</p>
+                                            <p class="w-28">Jumlah Harus Dibayar</p>
+                                            <p class="w-20">Status</p>
+                                            <p class="w-28">Batas Waktu</p>
+                                            <p class="w-32">Semua Jasa Kirim</p>
+                                            <p class="w-28">Rincian</p>
+                                        </div>
+                                        <!-- Menu Produk -->
+                                        <!-- Pesanan 1 -->
+                                        <div class="flex flex-wrap border-2 border-slate-300 rounded-lg mb-5">
+                                            <div class="flex w-full border-b-2 border-slate-300">
+                                                <div class="p-3 flex items-center w-full justify-between">
+                                                    <div class="flex">
+                                                        <svg class="h-5 w-5 fill-current text-secondary"
+                                                            viewBox="0 0 24 24">
+                                                            <ellipse cx="12" cy="8" rx="5" ry="6" />
+                                                            <path
+                                                                d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9    C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
+                                                        </svg>
+                                                        <p class="ml-5">Fox51 <span
+                                                                class="ml-5 text-third">12-01-2021</span>
+                                                        </p>
+                                                    </div>
+                                                    <p>No. Pesanan 2012070M2A1A6P</p>
                                                 </div>
                                             </div>
-                                            <div class="w-28">
-                                                <p>Rp 144.000</p>
-                                                <p class="text-sm text-third">BeeCash</p>
-                                            </div>
-                                            <div class="w-20">
-                                                <p>Sudah Dibayar</p>
-                                            </div>
-                                            <div class="w-28">
-                                                <p>14-01-2021</p>
-                                            </div>
-                                            <div class="w-32">
-                                                <p>JNE Reguler</p>
-                                            </div>
-                                            <div class="w-28">
-                                                <p class="text-primary">Periksa Rincian</p>
+                                            <div
+                                                class="p-3 w-full font-medium text-sm flex items-center justify-between h-fit">
+                                                <div class="flex gap-2 w-64">
+                                                    <img src="/dist/img/1.jpg" class="grow h-10"></img>
+                                                    <div class="flex flex-wrap">
+                                                        <p class="text-sm">CAREMAX</p>
+                                                        <p class="text-xs">CareMax Disposible Mask isi 50pcs</p>
+                                                        <p class="text-xs text-third">Variant <span
+                                                                class="text-black">ORANGE</span><br>
+                                                            <span class="text-black">x 3</span></p>
+                                                    </div>
+                                                </div>
+                                                <div class="w-28">
+                                                    <p>Rp 144.000</p>
+                                                    <p class="text-sm text-third">BeeCash</p>
+                                                </div>
+                                                <div class="w-20">
+                                                    <p>Sudah Dibayar</p>
+                                                </div>
+                                                <div class="w-28">
+                                                    <p>14-01-2021</p>
+                                                </div>
+                                                <div class="w-32">
+                                                    <p>JNE Reguler</p>
+                                                </div>
+                                                <div class="w-28">
+                                                    <p class="text-primary">Periksa Rincian</p>
+                                                </div>
                                             </div>
                                         </div>
+                                        <!-- Pesanan 1 -->
                                     </div>
-                                    <!-- Pesanan 1 -->
+                                    <!-- Bagian Atas -->
                                     <!-- Line -->
                                     <div class="flex grow justify-between gap-1">
                                         <div class="w-20 mb-5 border-2 border-secondary"></div>
@@ -1006,7 +1009,7 @@
                                             <input type="checkbox"
                                                 class="absolute top-0 inset-x-0 w-full h-12 opacity-0 z-10 cursor-pointer peer">
                                             <div class="h-12 w-full flex items-center">
-                                                <div class="self-center h-[1px] w-[675px] mr-5 bg-slate-800"></div>
+                                                <div class="self-center h-[1px] w-[700px] mr-5 bg-slate-800"></div>
                                                 <p class="text-sm">Lihat rincian penghasilan</p>
                                             </div>
                                             <div
@@ -1049,7 +1052,7 @@
                                     <!-- Bagian Kanan Bawah -->
                                     <!-- Bagian Kanan Pembayaran Pembeli -->
                                     <div
-                                        class="w-full flex justify-center items-center h-fit rounded-lg bg-white shadow-lg p-5 mb-5">
+                                        class="w-full flex justify-center items-center h-fit rounded-lg bg-white shadow-lg p-5">
                                         <p class="w-full font-medium">Pembayaran Pembeli</p>
                                         <p class="w-[100px] font-medium">Rp 154.000</p>
                                         <svg class="h-4 w-4 fill-current" style="enable-background:new 0 0 512 512;"
@@ -1063,75 +1066,80 @@
                                 <!-- Bagian Perlu Diproses -->
                                 <!-- Bagian Telah Diproses -->
                                 <div class="col-start-1 row-start-3 col-span-12" x-show="tab === 'telahdiproses'">
-                                    <div class="w-full -mt-16 mb-5 flex flex-col flex-wrap-reverse gap-1">
-                                        <a class="h-fit w-32 rounded-sm bg-third px-3 text-center text-white" href="#">
-                                            Proses Order
-                                        </a>
-                                        <a class="h-fit w-32 rounded-sm bg-primary px-3 text-center text-white"
-                                            href="#">
-                                            Cetak Label
-                                        </a>
-                                    </div>
-                                    <!-- Menu Produk -->
-                                    <div
-                                        class="px-3 mb-5 w-full font-medium border-2 border-slate-300 text-sm flex items-center justify-between h-fit rounded-lg bg-secondary">
-                                        <p class="w-64">Produk</p>
-                                        <p class="w-28">Jumlah Harus Dibayar</p>
-                                        <p class="w-20">Status</p>
-                                        <p class="w-28">Batas Waktu</p>
-                                        <p class="w-32">Semua Jasa Kirim</p>
-                                        <p class="w-28">Rincian</p>
-                                    </div>
-                                    <!-- Menu Produk -->
-                                    <!-- Pesanan 1 -->
-                                    <div class="flex flex-wrap border-2 border-slate-300 rounded-lg mb-5">
-                                        <div class="flex w-full border-b-2 border-slate-300">
-                                            <div class="p-3 flex items-center w-full justify-between">
-                                                <div class="flex">
-                                                    <svg class="h-5 w-5 fill-current text-secondary"
-                                                        viewBox="0 0 24 24">
-                                                        <ellipse cx="12" cy="8" rx="5" ry="6" />
-                                                        <path
-                                                            d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9    C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
-                                                    </svg>
-                                                    <p class="ml-5">Fox51 <span
-                                                            class="ml-5 text-third">12-01-2021</span>
-                                                    </p>
-                                                </div>
-                                                <p>No. Pesanan 2012070M2A1A6P</p>
-                                            </div>
+                                    <!-- Bagian Kanan Atas -->
+                                    <div class="w-full h-fit rounded-b-lg bg-white shadow-lg p-5 mb-5">
+                                        <div class="w-full -mt-[85px] mb-5 flex flex-col flex-wrap-reverse gap-1">
+                                            <a class="h-fit w-32 rounded-sm bg-third px-3 text-center text-white"
+                                                href="#">
+                                                Proses Order
+                                            </a>
+                                            <a class="h-fit w-32 rounded-sm bg-primary px-3 text-center text-white"
+                                                href="#">
+                                                Cetak Label
+                                            </a>
                                         </div>
+                                        <!-- Menu Produk -->
                                         <div
-                                            class="p-3 w-full font-medium text-sm flex items-center justify-between h-fit">
-                                            <div class="flex gap-2 w-64">
-                                                <img src="/dist/img/1.jpg" class="grow h-10"></img>
-                                                <div class="flex flex-wrap">
-                                                    <p class="text-sm">CAREMAX</p>
-                                                    <p class="text-xs">CareMax Disposible Mask isi 50pcs</p>
-                                                    <p class="text-xs text-third">Variant <span
-                                                            class="text-black">ORANGE</span><br>
-                                                        <span class="text-black">x 3</span></p>
+                                            class="px-3 mb-5 w-full font-medium border-2 border-slate-300 text-sm flex items-center justify-between h-fit rounded-lg bg-secondary">
+                                            <p class="w-64">Produk</p>
+                                            <p class="w-28">Jumlah Harus Dibayar</p>
+                                            <p class="w-20">Status</p>
+                                            <p class="w-28">Batas Waktu</p>
+                                            <p class="w-32">Semua Jasa Kirim</p>
+                                            <p class="w-28">Rincian</p>
+                                        </div>
+                                        <!-- Menu Produk -->
+                                        <!-- Pesanan 1 -->
+                                        <div class="flex flex-wrap border-2 border-slate-300 rounded-lg mb-5">
+                                            <div class="flex w-full border-b-2 border-slate-300">
+                                                <div class="p-3 flex items-center w-full justify-between">
+                                                    <div class="flex">
+                                                        <svg class="h-5 w-5 fill-current text-secondary"
+                                                            viewBox="0 0 24 24">
+                                                            <ellipse cx="12" cy="8" rx="5" ry="6" />
+                                                            <path
+                                                                d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9    C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
+                                                        </svg>
+                                                        <p class="ml-5">Fox51 <span
+                                                                class="ml-5 text-third">12-01-2021</span>
+                                                        </p>
+                                                    </div>
+                                                    <p>No. Pesanan 2012070M2A1A6P</p>
                                                 </div>
                                             </div>
-                                            <div class="w-28">
-                                                <p>Rp 144.000</p>
-                                                <p class="text-sm text-third">BeeCash</p>
-                                            </div>
-                                            <div class="w-20">
-                                                <p>Sudah Dibayar</p>
-                                            </div>
-                                            <div class="w-28">
-                                                <p>14-01-2021</p>
-                                            </div>
-                                            <div class="w-32">
-                                                <p>JNE Reguler</p>
-                                            </div>
-                                            <div class="w-28">
-                                                <p class="text-primary">Periksa Rincian</p>
+                                            <div
+                                                class="p-3 w-full font-medium text-sm flex items-center justify-between h-fit">
+                                                <div class="flex gap-2 w-64">
+                                                    <img src="/dist/img/1.jpg" class="grow h-10"></img>
+                                                    <div class="flex flex-wrap">
+                                                        <p class="text-sm">CAREMAX</p>
+                                                        <p class="text-xs">CareMax Disposible Mask isi 50pcs</p>
+                                                        <p class="text-xs text-third">Variant <span
+                                                                class="text-black">ORANGE</span><br>
+                                                            <span class="text-black">x 3</span></p>
+                                                    </div>
+                                                </div>
+                                                <div class="w-28">
+                                                    <p>Rp 144.000</p>
+                                                    <p class="text-sm text-third">BeeCash</p>
+                                                </div>
+                                                <div class="w-20">
+                                                    <p>Sudah Dibayar</p>
+                                                </div>
+                                                <div class="w-28">
+                                                    <p>14-01-2021</p>
+                                                </div>
+                                                <div class="w-32">
+                                                    <p>JNE Reguler</p>
+                                                </div>
+                                                <div class="w-28">
+                                                    <p class="text-primary">Periksa Rincian</p>
+                                                </div>
                                             </div>
                                         </div>
+                                        <!-- Pesanan 1 -->
                                     </div>
-                                    <!-- Pesanan 1 -->
+                                    <!-- Bagian Kanan Atas -->
                                     <!-- Line -->
                                     <div class="flex grow justify-between gap-1">
                                         <div class="w-20 mb-5 border-2 border-secondary"></div>
@@ -1327,7 +1335,7 @@
                                             <input type="checkbox"
                                                 class="absolute top-0 inset-x-0 w-full h-12 opacity-0 z-10 cursor-pointer peer">
                                             <div class="h-12 w-full flex items-center">
-                                                <div class="self-center h-[1px] w-[675px] mr-5 bg-slate-800"></div>
+                                                <div class="self-center h-[1px] w-[700px] mr-5 bg-slate-800"></div>
                                                 <p class="text-sm">Lihat rincian penghasilan</p>
                                             </div>
                                             <div
@@ -1370,7 +1378,7 @@
                                     <!-- Bagian Kanan Bawah -->
                                     <!-- Bagian Kanan Pembayaran Pembeli -->
                                     <div
-                                        class="mb-5 flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
+                                        class="flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
                                         <p class="w-full font-medium">Pembayaran Pembeli</p>
                                         <p class="w-[100px] font-medium">Rp 35.000</p>
                                         <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -1389,7 +1397,7 @@
                     <!-- Menu Selesai -->
                     <div x-show="tab === 'selesai'">
                         <!-- Bagian Kanan Atas -->
-                        <div class="mb-5 h-fit w-full rounded-lg bg-white px-5 pb-1 shadow-lg">
+                        <div class="mb-5 h-fit w-full rounded-b-lg bg-white p-5 pb-1 shadow-lg">
                             <!-- Search Box & Date -->
                             <div class="flex justify-between">
                                 <div class="flex">
@@ -1627,8 +1635,7 @@
                         </div>
                         <!-- Bagian Kanan Bawah -->
                         <!-- Bagian Kanan Pembayaran Pembeli -->
-                        <div
-                            class="mb-5 flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
+                        <div class="flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
                             <p class="w-full font-medium">Pembayaran Pembeli</p>
                             <p class="w-[100px] font-medium">Rp 35.000</p>
                             <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -1643,7 +1650,7 @@
                     <!-- Menu Pembatalan -->
                     <div x-show="tab === 'pembatalan'">
                         <!-- Bagian Kanan Atas -->
-                        <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-1 mb-5">
+                        <div class="w-full h-fit rounded-b-lg bg-white shadow-lg p-5 pb-1 mb-5">
                             <!-- Search Box & Date -->
                             <div class="flex justify-between">
                                 <div class="flex">
@@ -1880,7 +1887,7 @@
                         <!-- Bagian Kanan Bawah -->
                         <!-- Bagian Kanan Pembayaran Pembeli -->
                         <div
-                            class="mb-5 flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
+                            class="flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
                             <p class="w-full font-medium">Pembayaran Pembeli</p>
                             <p class="w-[100px] font-medium">Rp 154.000</p>
                             <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -1895,7 +1902,7 @@
                     <!-- Menu Pengembalian -->
                     <div x-show="tab === 'pengembalian'">
                         <!-- Bagian Kanan Atas -->
-                        <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-1 mb-5">
+                        <div class="w-full h-fit rounded-b-lg bg-white shadow-lg p-5 pb-1 mb-5">
                             <!-- Search Box & Date -->
                             <div class="flex justify-between">
                                 <div class="flex">
@@ -2116,7 +2123,7 @@
                         <!-- Bagian Kanan Bawah -->
                         <!-- Bagian Kanan Pembayaran Pembeli -->
                         <div
-                            class="mb-5 flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
+                            class="flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
                             <p class="w-full font-medium">Pembayaran Pembeli</p>
                             <p class="w-[100px] font-medium">Rp 154.000</p>
                             <svg class="h-4 w-4 fill-current" style="enable-background: new 0 0 512 512"
@@ -2365,7 +2372,7 @@
                 </div>
                 <!-- Bagian Kanan Bawah -->
                 <!-- Bagian Kanan Pembayaran Pembeli -->
-                <div class="mb-5 flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
+                <div class="flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
                     <p class="w-full font-medium">Pembayaran Pembeli</p>
                     <p class="w-[100px] font-medium">Rp 154.000</p>
                     <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -2597,7 +2604,7 @@
                 </div>
                 <!-- Bagian Kanan Bawah -->
                 <!-- Bagian Kanan Pembayaran Pembeli -->
-                <div class="mb-5 flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
+                <div class="flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
                     <p class="w-full font-medium">Pembayaran Pembeli</p>
                     <p class="w-[100px] font-medium">Rp 154.000</p>
                     <svg class="h-4 w-4 fill-current" style="enable-background: new 0 0 512 512" viewBox="0 0 512 512">
@@ -2611,7 +2618,7 @@
             <!-- Saldo Saya -->
             <div x-show="menu === 'Saldo'">
                 <!-- Kanan Atas -->
-                <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 mb-5">
+                <div class="w-full h-fit rounded-lg bg-white shadow-lg p-5 mb-5">
                     <div class="flex text-3xl my-5 items-center justify-between font-bold">
                         <h1>Riwayat Saldo</h1>
                         <div class="flex gap-5">
@@ -2689,7 +2696,7 @@
                         </tbody>
                     </table>
                     <!-- Menu -->
-                    <p class="absolute pt-3 right-10"><span class="text-primary">1</span> 2 3 4 5 ... 50</p>
+                    <p class="absolute pt-5 right-10"><span class="text-primary">1</span> 2 3 4 5 ... 50</p>
                 </div>
                 <!-- Kanan Atas -->
                 <!-- Kanan Tengah -->
@@ -2820,7 +2827,7 @@
                 </div>
                 <!-- Kanan Tengah -->
                 <!-- Kanan Bawah -->
-                <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 mb-5">
+                <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5">
                     <div class="flex text-2xl my-5 items-end justify-between">
                         <h1>Informasi Penarikan</h1>
                         <div class="flex gap-5">
@@ -2848,7 +2855,7 @@
                         <p class="col-start-3">:</p>
                         <p class="col-start-4 col-span-2">Sawah Besar</p>
                     </div>
-                    <div class="flex justify-between mb-5 items-end">
+                    <div class="flex justify-between pb-5 items-end">
                         <p class="my-5 font-semibold">Penarikan No. Invoice 8751A02MP31 <br>
                             <span class="text-primary font-medium">Rp 500.000</span></p>
                         <p class="text-xs">Status : <span class="font-medium">BERHASIL</span></p>
@@ -2907,7 +2914,7 @@
             <div x-show="menu === 'Tarik'">
                 <!-- Bagian Atas -->
                 <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 mb-5">
-                    <div class="flex flex-wrap font-bold text-2xl mb-2 justify-between mt-5">
+                    <div class="flex flex-wrap font-bold text-2xl mb-2 justify-between">
                         <h1>Total Saldo</h1>
                         <h2 class="text-primary">500.000</h2>
                     </div>
@@ -2987,7 +2994,7 @@
                         </div>
                         <!-- Kanan Atas -->
                         <!-- Kanan Bawah -->
-                        <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-1 mt-10 mb-5">
+                        <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-1 mt-10">
                             <div class="flex my-5 items-end justify-between">
                                 <h1 class="text-2xl">Informasi Pembayaran</h1>
                                 <div class="flex gap-5 items-end">
@@ -3117,7 +3124,7 @@
                     <!-- Bagian Invoice -->
                     <!-- Bagian Selesai -->
                     <div class="mt-2" x-show="tab === 'selesai'">
-                        <div class="relative flex flex-wrap">
+                        <div class="relative flex flex-wrap mt-5">
                             <div class="w-full h-56 rounded-lg bg-white shadow-lg">
                                 <div class="flex flex-wrap justify-between w-full p-5 items-center gap-3">
                                     <div class="flex items-center justify-between gap-3">
@@ -3140,8 +3147,8 @@
             <div x-show="menu === 'Laporan'">
                 <div class="relative w-full">
                     <div x-data="{ tab: 'penjualan' }">
-                        <div class="flex w-full justify-between items-center">
-                            <div class="w-full flex h-fit mt-5 font-medium">
+                        <div class="flex w-full justify-between items-center bg-white rounded-t-lg p-5">
+                            <div class="w-full flex h-fit font-medium">
                                 <a class="py-2 px-10 rounded-l-md bg-white border"
                                     :class="{'text-orange-500 bg-orange-100': tab === 'penjualan'}" href="#"
                                     @click.prevent="tab = 'penjualan'">Penjualan</a>
@@ -3149,7 +3156,7 @@
                                     :class="{'text-orange-500 bg-orange-100': tab === 'penarikan'}" href="#"
                                     @click.prevent="tab = 'penarikan'">Penarikan</a>
                             </div>
-                            <div class="flex w-full mt-7 items-center">
+                            <div class="flex w-full items-center">
                                 <!-- Date -->
                                 <div class="mr-5 flex gap-3">
                                     <div class=" justify-center items-center text-primary">
@@ -3179,7 +3186,7 @@
                             </div>
                         </div>
                         <!-- Bagian Penjualan -->
-                        <div x-show="tab === 'penjualan'" class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-5">
+                        <div x-show="tab === 'penjualan'" class="w-full h-fit rounded-b-lg bg-white shadow-lg px-5 pb-5">
                             <!-- Menu -->
                             <div class="py-5">
                                 <div class="w-full mb-5">
@@ -3343,11 +3350,11 @@
                         </div>
                         <!-- Bagian Penjualan -->
                         <!-- Bagian Penarikan -->
-                        <div x-show="tab === 'penarikan'" class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-5">
+                        <div x-show="tab === 'penarikan'">
                             <!-- Bagian Kanan Atas -->
-                            <div class="flex w-full justify-between items-center">
+                            <div class="flex w-full justify-between items-center bg-white pb-5 px-5">
                                 <!-- Date -->
-                                <div class=" mt-7 flex gap-3">
+                                <div class="mt-5 flex gap-3">
                                     <div class=" justify-center items-center text-primary">
                                         <svg class="w-7 h-7 fill-current" enable-background="new 0 0 32 32"
                                             viewBox="0 0 32 32">
@@ -3374,8 +3381,8 @@
                             </div>
                             <!-- Bagian Kanan Atas -->
                             <!-- Bagian Kanan Tengah -->
-                            <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-1 mb-5">
-                                <div class="flex flex-wrap justify-between w-full mb-2 mt-5 items-center gap-3">
+                            <div class="w-full h-fit rounded-b-lg bg-white shadow-lg px-5 pb-1 mb-5">
+                                <div class="flex flex-wrap justify-between w-full mb-2 items-center gap-3">
                                     <div class="flex items-center justify-between gap-3">
                                         <div class="border border-third font-bold text-2xl h-4 w-4 relative">
                                             <div class="absolute -top-[12px] -left-[2px]">+</div>
@@ -3422,7 +3429,7 @@
                             </div>
                             <!-- Kanan Tengah -->
                             <!-- Kanan Bawah -->
-                            <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-1 my-5">
+                            <div class="w-full h-fit rounded-lg bg-white shadow-lg px-5 pb-1 mt-5">
                                 <div class="flex my-5 items-end justify-between">
                                     <h1 class="text-2xl">Informasi Pembayaran</h1>
                                     <div class="flex gap-5 items-end">
@@ -3557,7 +3564,7 @@
             <!-- Pengaturan -->
             <div x-show="menu === 'Pengaturan'">
                 <div class="w-[700px] h-fit rounded-lg bg-white shadow-lg px-5 pb-1 mb-5">
-                    <div class="grid grid-cols-12 font-bold text-xl mt-5">
+                    <div class="grid grid-cols-12 font-bold text-xl pt-5">
                         <h1 class="col-start-1 col-span-4">Masukan PIN Lama</h1>
                         <div class="col-start-5 col-span-full flex flex-wrap">
                             <input type="text"

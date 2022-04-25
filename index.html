@@ -22,7 +22,6 @@
     <style>
         .rotate {
             transform: rotate(180deg);
-            transition: all 1s ease-in-out;
         }
     </style>
     <title>Website Alpine JS</title>
@@ -45,7 +44,7 @@
                         <div class="w-full flex justify-between px-10" x-data="{selected:false}"
                             x-on:click="selected=!open">
                             <button class="font-semibold">Pesanan</button>
-                            <svg class="w-10 h-10 fill-current" x-bind:class="{'rotate' : selected}" viewBox="0 0 64 64"
+                            <svg class="w-10 h-10 fill-current transition-all duration-1000" x-bind:class="{'rotate' : selected}" viewBox="0 0 64 64"
                                 xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <style type="text/css">
                                     .st0 {

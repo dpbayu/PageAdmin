@@ -22,7 +22,7 @@
     <title>Website Alpine JS</title>
 </head>
 
-<body class="bg-rose-500">
+<body class="bg-rose-800">
     <div class="container h-fit grid grid-cols-12 mx-10 my-10" x-data="{menu:'Dashboard'}">
         <div class="col-span-3 h-full bg-orange-200 py-3 mr-5 rounded-lg">
             <h1 class="text-2xl font-bold mb-5 px-5">Menu</h1>
@@ -37,11 +37,18 @@
                 <li class="w-full items-center cursor-pointer justify-between" x-data="{ open: false }">
                     <div class="flex justify-between px-10" x-on:click="open = ! open">
                         <button class="font-semibold">Pesanan</button>
-                        <svg class="w-10 h-10 fill-current" viewBox=" 0 0
-                        64 64">
-                            <g transform="translate(237.000000, 335.000000)">
-                                <polyline class="st0" id="Fill-35"
-                                    points="-191.3,-296.9 -193.3,-294.9 -205,-306.6 -216.7,-294.9 -218.7,-296.9 -205,-310.6      -191.3,-296.9    " />
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 64 64"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <style type="text/css">
+                                .st0 {
+                                    fill: #000000;
+                                }
+                            </style>
+                            <g>
+                                <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
+                                    <polyline class="st0" id="Fill-35"
+                                        points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
+                                </g>
                             </g>
                         </svg>
                     </div>
@@ -65,11 +72,18 @@
                 <li class="w-full items-center cursor-pointer justify-between" x-data="{ open: false }">
                     <div class="flex justify-between px-10" x-on:click="open = ! open">
                         <button class="font-semibold">Keuangan</button>
-                        <svg class="w-10 h-10 fill-current" viewBox=" 0 0
-                        64 64">
-                            <g transform="translate(237.000000, 335.000000)">
-                                <polyline class="st0" id="Fill-35"
-                                    points="-191.3,-296.9 -193.3,-294.9 -205,-306.6 -216.7,-294.9 -218.7,-296.9 -205,-310.6      -191.3,-296.9    " />
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 64 64"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <style type="text/css">
+                                .st0 {
+                                    fill: #000000;
+                                }
+                            </style>
+                            <g>
+                                <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
+                                    <polyline class="st0" id="Fill-35"
+                                        points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
+                                </g>
                             </g>
                         </svg>
                     </div>
@@ -99,32 +113,53 @@
                     </ul>
                 </li>
                 <!-- Inventory -->
-                <li class="w-full flex cursor-pointer items-center justify-between px-10"
-                    :class="{'bg-orange-100 w-full text-orange-500': menu === 'Inventory'}"
-                    @click.prevent="menu='Inventory'">
-                    <span class="font-semibold">Inventory</span>
-                    <svg class="w-10 h-10 fill-current" :class="{'bg-orange-100 w-full text-orange-500'}" viewBox=" 0 0
-                        64 64">
-                        <g transform="translate(237.000000, 335.000000)">
-                            <polyline class="st0" id="Fill-35"
-                                points="-191.3,-296.9 -193.3,-294.9 -205,-306.6 -216.7,-294.9 -218.7,-296.9 -205,-310.6      -191.3,-296.9    " />
-                        </g>
-                    </svg>
+                <li class="w-full items-center cursor-pointer justify-between" x-data="{ open: false }">
+                    <div class="flex justify-between px-10" x-on:click="open = ! open">
+                        <button class="font-semibold">Inventory</button>
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 64 64"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <style type="text/css">
+                                .st0 {
+                                    fill: #000000;
+                                }
+                            </style>
+                            <g>
+                                <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
+                                    <polyline class="st0" id="Fill-35"
+                                        points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <ul class="my-2 w-full" x-show="open">
+                        <div @click.prevent="menu='TambahkanProduk'">
+                            <li class="my-2 px-14 py-1"
+                                :class="{'bg-orange-100 w-full text-orange-500': menu === 'TambahkanProduk'}">
+                                Tambahkan Produk</li>
+                        </div>
+                        <div @click.prevent="menu='ProdukSaya'">
+                            <li class="my-2 px-14 py-1"
+                                :class="{'bg-orange-100 w-full text-orange-500': menu === 'ProdukSaya'}">Produk Saya
+                            </li>
+                        </div>
+                    </ul>
                 </li>
-                <div class="px-20" x-show="menu === 'Inventory'">
-                    <li class="my-2">Tambahkan Produk</li>
-                    <li class="my-2">Produk Saya</li>
-                </div>
                 <!-- Pengaturan Akun -->
                 <li class="w-full flex cursor-pointer items-center justify-between px-10"
                     :class="{'bg-orange-100 w-full text-orange-500': menu === 'PengaturanAkun'}"
                     @click.prevent="menu='PengaturanAkun'">
                     <span class="font-semibold">Pengaturan Akun</span>
-                    <svg class="w-10 h-10 fill-current" :class="{'bg-orange-100 w-full text-orange-500'}"
-                        viewBox="0 0 64 64">
-                        <g transform="translate(237.000000, 335.000000)">
-                            <polyline class="st0" id="Fill-35"
-                                points="-191.3,-296.9 -193.3,-294.9 -205,-306.6 -216.7,-294.9 -218.7,-296.9 -205,-310.6      -191.3,-296.9    " />
+                    <svg class="w-10 h-10 fill-current" viewBox="0 0 64 64" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <style type="text/css">
+                            .st0 {
+                                fill: #000000;
+                            }
+                        </style>
+                        <g>
+                            <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
+                                <polyline class="st0" id="Fill-35"
+                                    points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
+                            </g>
                         </g>
                     </svg>
                 </li>
@@ -1886,8 +1921,7 @@
                         </div>
                         <!-- Bagian Kanan Bawah -->
                         <!-- Bagian Kanan Pembayaran Pembeli -->
-                        <div
-                            class="flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
+                        <div class="flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
                             <p class="w-full font-medium">Pembayaran Pembeli</p>
                             <p class="w-[100px] font-medium">Rp 154.000</p>
                             <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -2122,8 +2156,7 @@
                         </div>
                         <!-- Bagian Kanan Bawah -->
                         <!-- Bagian Kanan Pembayaran Pembeli -->
-                        <div
-                            class="flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
+                        <div class="flex h-fit w-full items-center justify-center rounded-lg bg-white p-5 shadow-lg">
                             <p class="w-full font-medium">Pembayaran Pembeli</p>
                             <p class="w-[100px] font-medium">Rp 154.000</p>
                             <svg class="h-4 w-4 fill-current" style="enable-background: new 0 0 512 512"
@@ -2696,7 +2729,7 @@
                         </tbody>
                     </table>
                     <!-- Menu -->
-                    <p class="absolute pt-5 right-10"><span class="text-primary">1</span> 2 3 4 5 ... 50</p>
+                    <p class="absolute pt-7 right-10"><span class="text-primary">1</span> 2 3 4 5 ... 50</p>
                 </div>
                 <!-- Kanan Atas -->
                 <!-- Kanan Tengah -->
@@ -3186,7 +3219,8 @@
                             </div>
                         </div>
                         <!-- Bagian Penjualan -->
-                        <div x-show="tab === 'penjualan'" class="w-full h-fit rounded-b-lg bg-white shadow-lg px-5 pb-5">
+                        <div x-show="tab === 'penjualan'"
+                            class="w-full h-fit rounded-b-lg bg-white shadow-lg px-5 pb-5">
                             <!-- Menu -->
                             <div class="py-5">
                                 <div class="w-full mb-5">
@@ -3613,9 +3647,1162 @@
                 </div>
             </div>
             <!-- Pengaturan -->
+            <!-- Tambahkan Produk -->
+            <div x-show="menu === 'TambahkanProduk'">
+                <!-- Kanan Atas -->
+                <p class="w-full h-fit rounded-sm bg-orange-100 text-primary p-5 py-2 mb-2">Pastikan produk Anda
+                    sudah sesuai dengan sayarat dan ketentuan beemall yang berlaku</p>
+                <div class="w-full h-fit rounded-lg bg-white shadow-lg p-5 mb-5">
+                    <h1 class="text-xl font-medium">Informasi Produk</h1>
+                    <div class="flex flex-wrap w-full my-3">
+                        <p class="w-1/3">Nama Produk</p>
+                        <div class="w-2/3 text-third">
+                            <input class="w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap w-full my-3">
+                        <p class="w-1/3">Nama Produk</p>
+                        <div class="w-2/3 text-third">
+                            <input class="w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap w-full my-3">
+                        <p class="w-1/3">Nama Brand</p>
+                        <div class="w-2/3 text-third">
+                            <input class="w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap w-full my-3">
+                        <p class="w-1/3">Kategori</p>
+                        <div class="w-2/3 text-third relative">
+                            <input class="w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                            <svg class="h-10 w-10 absolute -top-2 right-0 fill-current"
+                                style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
+                                <g>
+                                    <g transform="translate(237.000000, 335.000000)">
+                                        <polyline class="st0" id="Fill-35"
+                                            points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap w-full my-3">
+                        <p class="w-1/3">Etalase</p>
+                        <div class="w-2/3 text-third">
+                            <input class="w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap w-full my-3">
+                        <p class="w-1/3">Deskripsi</p>
+                        <div class="w-2/3 text-third">
+                            <textarea class="border-[1px] border-third w-full rounded-md h-32"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kanan Atas -->
+                <!-- Kanan Tengah -->
+                <div class="w-full h-fit rounded-lg bg-white shadow-lg p-5 mb-5">
+                    <div class="flex justify-between my-5">
+                        <h1>Varian</h1>
+                        <a class="border border-primary px-5 text-primary font-medium" href="#">+Tambahkan</a>
+                        <a class="border border-primary px-5 text-primary font-medium" href="#">Hapus</a>
+                    </div>
+                    <div class="border-t-third border-[1px]"></div>
+                    <!-- Varian 1 -->
+                    <div class="flex flex-wrap w-full my-3">
+                        <p class="w-full">Tipe Varian 1</p>
+                        <div class="w-3/5 text-third">
+                            <input class="w-full border-[1px] pl-2 h-6 border-third rounded-md"
+                                placeholder="Ukuran, Warna, Kemasan, Ukuran Kemasan">
+                            <svg class="h-10 w-10 absolute -top-2 right-0 fill-current"
+                                style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
+                                <g>
+                                    <g transform="translate(237.000000, 335.000000)">
+                                        <polyline class="st0" id="Fill-35"
+                                            points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Radio Button -->
+                    <div class="flex">
+                        <p class="mr-5">Default</p>
+                        <div class="border-2 border-third h-5 w-5 rounded-full">
+                            <div class="flex w-full h-full items-center justify-center">
+                                <div class="border-2 bg-blue-600 h-3 w-3 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Radio Button -->
+                    <div class="flex flex-wrap w-full my-3">
+                        <div class="w-3/5 text-third relative">
+                            <input class="w-full border-[1px] pl-2 h-6 border-third rounded-md"
+                                placeholder="Pilih atau ketik varian">
+                            <svg class="h-10 w-10 absolute -top-2 right-0 fill-current"
+                                style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
+                                <g>
+                                    <g transform="translate(237.000000, 335.000000)">
+                                        <polyline class="st0" id="Fill-35"
+                                            points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Varian 1 -->
+                    <!-- Varian 2 -->
+                    <div class="flex flex-wrap w-full my-3">
+                        <p class="w-full">Tipe Varian 2</p>
+                        <div class="w-3/5 text-third relative">
+                            <input class="w-full border-[1px] pl-2 h-6 border-third rounded-md"
+                                placeholder="Ukuran, Warna, Kemasan, Ukuran Kemasan">
+                            <svg class="h-10 w-10 absolute -top-2 right-0 fill-current"
+                                style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
+                                <g>
+                                    <g transform="translate(237.000000, 335.000000)">
+                                        <polyline class="st0" id="Fill-35"
+                                            points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap w-full mt-10 mb-5">
+                        <div class="w-3/5 text-third relative">
+                            <input class="w-full border-[1px] pl-2 h-6 border-third rounded-md"
+                                placeholder="Pilih atau ketik varian">
+                            <svg class="h-10 w-10 absolute -top-2 right-0 fill-current"
+                                style="enable-background:new 0 0 64 64;" viewBox="0 0 64 64">
+                                <g>
+                                    <g transform="translate(237.000000, 335.000000)">
+                                        <polyline class="st0" id="Fill-35"
+                                            points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Varian 2 -->
+                    <div class="mt-10 mb-5 border-t-third border-[1px]"></div>
+                    <h1 class="my-5">Tabel Varian</h1>
+                    <!-- Table -->
+                    <div class="border-[1px] border-third rounded-md my-5">
+                        <table class="table-auto w-full mb-5">
+                            <thead>
+                                <tr class="text-sm">
+                                    <th class="font-normal py-3">Ukuran</th>
+                                    <th class="font-normal">Warna</th>
+                                    <th class="font-normal">Harga</th>
+                                    <th class="font-normal">Stok</th>
+                                    <th class="font-normal">SKU</th>
+                                    <th class="font-normal w-10">Gambar</th>
+                                    <th class="font-normal">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-sm border-b-[1px] border-third">
+                                    <td class="text-center relative">
+                                        <div class="border-dashed absolute top-4 left-10 border-2 h-3 w-3 border-third">
+                                        </div>
+                                        <p>3</p>
+                                    </td>
+                                    <td class="text-center">MERAH</td>
+                                    <td class="text-center px-3">
+                                        <div class="border border-third h-5 rounded-sm"></div>
+                                    </td>
+                                    <td class="text-center px-3">
+                                        <div class="border border-third h-5 rounded-sm"></div>
+                                    </td>
+                                    <td class="text-center px-3">
+                                        <div class="border border-third h-5 rounded-sm"></div>
+                                    </td>
+                                    <td class="text-center px-10">
+                                        <div class="border-dashed border-2 h-10 w-10 border-third"><span
+                                                class="text-2xl">+</span></div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <div
+                                                class="inline-block text w-10 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle"
+                                                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                                <label for="toggle"
+                                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-800 cursor-pointer"></label>
+                                            </div>
+                                            <label for="toggle" class="text-xs text-gray-700">Utama</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="text-sm border-b-[1px] border-third">
+                                    <td class="text-center relative">
+                                        <div class="border-dashed absolute top-4 left-10 border-2 h-3 w-3 border-third">
+                                        </div>
+                                        <p>3</p>
+                                    </td>
+                                    <td class="text-center">MERAH</td>
+                                    <td class="text-center px-3">
+                                        <div class="border border-third h-5 rounded-sm"></div>
+                                    </td>
+                                    <td class="text-center px-3">
+                                        <div class="border border-third h-5 rounded-sm"></div>
+                                    </td>
+                                    <td class="text-center px-3">
+                                        <div class="border border-third h-5 rounded-sm"></div>
+                                    </td>
+                                    <td class="text-center px-10">
+                                        <div class="border-dashed border-2 h-10 w-10 border-third"><span
+                                                class="text-2xl">+</span></div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <div
+                                                class="inline-block text w-10 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle"
+                                                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                                <label for="toggle"
+                                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-800 cursor-pointer"></label>
+                                            </div>
+                                            <label for="toggle" class="text-xs text-gray-700">Utama</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center relative">
+                                        <div class="border-dashed absolute top-4 left-10 border-2 h-3 w-3 border-third">
+                                        </div>
+                                        <p>3</p>
+                                    </td>
+                                    <td class="text-center">MERAH</td>
+                                    <td class="text-center px-3">
+                                        <div class="border border-third h-5 rounded-sm"></div>
+                                    </td>
+                                    <td class="text-center px-3">
+                                        <div class="border border-third h-5 rounded-sm"></div>
+                                    </td>
+                                    <td class="text-center px-3">
+                                        <div class="border border-third h-5 rounded-sm"></div>
+                                    </td>
+                                    <td class="text-center px-10">
+                                        <div class="border-dashed border-2 h-10 w-10 border-third"><span
+                                                class="text-2xl">+</span></div>
+                                    </td>
+                                    <td class="w-[100px] ml-5">
+                                        <div>
+                                            <div
+                                                class="inline-block text w-10 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle"
+                                                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                                <label for="toggle"
+                                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-800 cursor-pointer"></label>
+                                            </div>
+                                            <label for="toggle" class="text-xs text-gray-700">Utama</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Table -->
+                    <div class="flex gap-5 my-5">
+                        <p>Gambar panduan Ukuran</p>
+                        <div class="relative border-dashed border-2 h-10 w-10 border-third">
+                            <span class="text-2xl absolute top-0 left-2">+</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kanan Tengah -->
+                <!-- Kanan Bawah -->
+                <div class="w-full h-fit rounded-lg bg-white shadow-lg p-5">
+                    <h1>Harga</h1>
+                    <div class="flex flex-wrap w-full my-3">
+                        <p class="w-1/3">Minimum Pemesanan</p>
+                        <div class="w-2/3 text-third">
+                            <input class="w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap w-full my-3">
+                        <p class="w-1/3">Harga Grosir</p>
+                        <div class="w-2/3 flex grow gap-10">
+                            <a class="border border-primary px-5 w-36 text-primary font-medium" href="#">+Tambahkan</a>
+                            <a class="border border-primary px-5 w-52 text-primary font-medium" href="#">-Hapus Harga
+                                Grosir
+                            </a>
+                        </div>
+                        <p class="w-1/3"></p>
+                        <div class="w-2/3 flex flex-wrap gap-2 mt-3">
+                            <p>Harga Utama</p>
+                            <input class="w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                            <div class="grid grid-cols-12 gap-1">
+                                <p class="col-start-1 col-span-2">Jumlah Min</p>
+                                <input
+                                    class="col-start-1 row-start-2 col-span-3 w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                                <input
+                                    class="col-start-1 row-start-3 col-span-3 w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                                <input
+                                    class="col-start-1 row-start-4 col-span-3 w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                                <!-- = -->
+                                <div class="col-start-6 row-start-2">=</div>
+                                <div class="col-start-6 row-start-3">=</div>
+                                <div class="col-start-6 row-start-4">=</div>
+                                <!-- = -->
+                                <p class="col-start-9 col-span-2">Harga Grosir</p>
+                                <input
+                                    class="col-start-9 row-start-2 col-span-3 w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                                <input
+                                    class="col-start-9 row-start-3 col-span-3 w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                                <input
+                                    class="col-start-9 row-start-4 col-span-3 w-full border-[1px] pl-2 h-6 border-third rounded-md">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kanan Bawah -->
+            </div>
+            <!-- Tambahkan Produk -->
+            <!-- Produk Saya -->
+            <div x-show="menu === 'ProdukSaya'">
+                <div x-data="{ tab: 'semua' }">
+                    <div class="flex w-full justify-between items-center rounded-t-lg">
+                        <div class="w-full flex h-fit font-medium">
+                            <a class="py-2 px-10 rounded-l-md rounded-b-none bg-white border"
+                                :class="{'text-orange-500 bg-orange-100': tab === 'semua'}" href="#"
+                                @click.prevent="tab = 'semua'">Semua</a>
+                            <a class="py-2 px-10 bg-white border"
+                                :class="{'text-orange-500 bg-orange-100': tab === 'aktif'}" href="#"
+                                @click.prevent="tab = 'aktif'">Aktif</a>
+                            <a class="py-2 px-10 rounded-r-md rounded-b-none bg-white border"
+                                :class="{'text-orange-500 bg-orange-100': tab === 'tidakaktif'}" href="#"
+                                @click.prevent="tab = 'tidakaktif'">Tidak Aktif</a>
+                        </div>
+                        <a class="px-2 py-1 h-fit bg-primary w-32 text-white rounded-md" href="#">+ Tambahkan</a>
+                    </div>
+                    <!-- Bagian Semua -->
+                    <div x-show="tab === 'semua'">
+                        <div class="w-full h-fit rounded-b-lg rounded-r-lg bg-white shadow-lg px-5 pb-5">
+                            <!-- Search Box -->
+                            <div class="flex w-full justify-between py-5">
+                                <div class="flex">
+                                    <div class="flex border-2 rounded h-fit">
+                                        <input type="text" class="px-4 w-64"
+                                            placeholder="Cari nama produk, sku, nomor resi, nomor pesanan">
+                                        <button class="flex w-10 justify-center items-center">
+                                            <svg class="text-slate-500 w-5 h-5 fill-current"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Search Box -->
+                            <table class="table-auto w-full">
+                                <thead class="rounded-md border-y-[1px] border-third">
+                                    <tr class="text-sm">
+                                        <th class="font-normal w-80 py-3">Info Produk</th>
+                                        <th class="font-normal w-20">Statistik</th>
+                                        <th class="font-normal w-32">Harga</th>
+                                        <th class="font-normal w-10">Stok</th>
+                                        <th class="font-normal w-20">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-sm border-b-[1px] border-third">
+                                        <td class="py-2 flex gap-2">
+                                            <img class="w-16 pl-2 pt-2 h-full" src="/dist/img/1.jpg" alt="Produk">
+                                            <div class="flex flex-wrap">
+                                                <p>CAREMAX</p>
+                                                <p class="w-full text-[10px]">CareMax Disposible Mask isi 50pcs
+                                                </p>
+                                                <p class="w-full text-xs">Variant <span class="text-xs">ORANGE</span>
+                                                </p>
+                                                <p class="w-full text-xs">x 1</p>
+                                            </div>
+                                        </td>
+                                        <td class="px-5">
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                        </td>
+                                        <td class="text-center px-5">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                Rp 300.000</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                745</div>
+                                        </td>
+                                        <td class="w-[125px] px-5 flex gap-2">
+                                            <div
+                                                class="inline-block relative text w-10 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle"
+                                                    class="toggle-checkbox absolute right-0 block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                                <label for="toggle"
+                                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-primary cursor-pointer"></label>
+                                            </div>
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                enable-background="new 0 0 48 48" id="Layer_1" version="1.1"
+                                                viewBox="0 0 48 48" xml:space="preserve">
+                                                <path clip-rule="evenodd"
+                                                    d="M44.929,14.391c-0.046,0.099-0.102,0.194-0.183,0.276L16.84,42.572  c-0.109,0.188-0.26,0.352-0.475,0.434l-13.852,3.88c-0.029,0.014-0.062,0.016-0.094,0.026l-0.047,0.014  c-0.008,0.003-0.017,0.001-0.024,0.004c-0.094,0.025-0.187,0.046-0.286,0.045c-0.098,0.003-0.189-0.015-0.282-0.041  c-0.021-0.006-0.04-0.002-0.061-0.009c-0.008-0.003-0.013-0.01-0.021-0.013c-0.088-0.033-0.164-0.083-0.24-0.141  c-0.039-0.028-0.08-0.053-0.113-0.086s-0.058-0.074-0.086-0.113c-0.058-0.075-0.107-0.152-0.141-0.24  c-0.004-0.008-0.01-0.013-0.013-0.021c-0.007-0.02-0.003-0.04-0.009-0.061c-0.025-0.092-0.043-0.184-0.041-0.281  c0-0.1,0.02-0.193,0.045-0.287c0.004-0.008,0.001-0.016,0.004-0.023l0.014-0.049c0.011-0.03,0.013-0.063,0.026-0.093l3.88-13.852  c0.082-0.216,0.246-0.364,0.434-0.475l27.479-27.48c0.04-0.045,0.087-0.083,0.128-0.127l0.299-0.299  c0.015-0.015,0.034-0.02,0.05-0.034C34.858,1.87,36.796,1,38.953,1C43.397,1,47,4.603,47,9.047  C47,11.108,46.205,12.969,44.929,14.391z M41.15,15.5l-3.619-3.619L13.891,35.522c0.004,0.008,0.014,0.011,0.018,0.019l2.373,4.827  L41.15,15.5z M3.559,44.473l2.785-0.779l-2.006-2.005L3.559,44.473z M4.943,39.53l3.558,3.559l6.12-1.715  c0,0-2.586-5.372-2.59-5.374l-5.374-2.59L4.943,39.53z M12.49,34.124c0.008,0.004,0.011,0.013,0.019,0.018L36.15,10.5l-3.619-3.619  L7.663,31.749L12.49,34.124z M38.922,3c-1.782,0-3.372,0.776-4.489,1.994l-0.007-0.007L33.912,5.5l8.619,8.619l0.527-0.528  l-0.006-0.006c1.209-1.116,1.979-2.701,1.979-4.476C45.031,5.735,42.296,3,38.922,3z"
+                                                    fill-rule="evenodd" /></svg>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-sm border-b-[1px] border-third">
+                                        <td class="py-2 flex gap-2">
+                                            <img class="w-16 pl-2 pt-2 h-full" src="/dist/img/1.jpg" alt="Produk">
+                                            <div class="flex flex-wrap">
+                                                <p>CAREMAX</p>
+                                                <p class="w-full text-[10px]">CareMax Disposible Mask isi 50pcs
+                                                </p>
+                                                <p class="w-full text-xs">Variant <span class="text-xs">ORANGE</span>
+                                                </p>
+                                                <p class="w-full text-xs">x 1</p>
+                                            </div>
+                                        </td>
+                                        <td class="px-5">
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                        </td>
+                                        <td class="text-center px-5">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                Rp 300.000</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                745</div>
+                                        </td>
+                                        <td class="w-[125px] px-5 flex gap-2">
+                                            <div
+                                                class="inline-block relative text w-10 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle"
+                                                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                                <label for="toggle"
+                                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-900 cursor-pointer"></label>
+                                            </div>
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                enable-background="new 0 0 48 48" id="Layer_1" version="1.1"
+                                                viewBox="0 0 48 48" xml:space="preserve">
+                                                <path clip-rule="evenodd"
+                                                    d="M44.929,14.391c-0.046,0.099-0.102,0.194-0.183,0.276L16.84,42.572  c-0.109,0.188-0.26,0.352-0.475,0.434l-13.852,3.88c-0.029,0.014-0.062,0.016-0.094,0.026l-0.047,0.014  c-0.008,0.003-0.017,0.001-0.024,0.004c-0.094,0.025-0.187,0.046-0.286,0.045c-0.098,0.003-0.189-0.015-0.282-0.041  c-0.021-0.006-0.04-0.002-0.061-0.009c-0.008-0.003-0.013-0.01-0.021-0.013c-0.088-0.033-0.164-0.083-0.24-0.141  c-0.039-0.028-0.08-0.053-0.113-0.086s-0.058-0.074-0.086-0.113c-0.058-0.075-0.107-0.152-0.141-0.24  c-0.004-0.008-0.01-0.013-0.013-0.021c-0.007-0.02-0.003-0.04-0.009-0.061c-0.025-0.092-0.043-0.184-0.041-0.281  c0-0.1,0.02-0.193,0.045-0.287c0.004-0.008,0.001-0.016,0.004-0.023l0.014-0.049c0.011-0.03,0.013-0.063,0.026-0.093l3.88-13.852  c0.082-0.216,0.246-0.364,0.434-0.475l27.479-27.48c0.04-0.045,0.087-0.083,0.128-0.127l0.299-0.299  c0.015-0.015,0.034-0.02,0.05-0.034C34.858,1.87,36.796,1,38.953,1C43.397,1,47,4.603,47,9.047  C47,11.108,46.205,12.969,44.929,14.391z M41.15,15.5l-3.619-3.619L13.891,35.522c0.004,0.008,0.014,0.011,0.018,0.019l2.373,4.827  L41.15,15.5z M3.559,44.473l2.785-0.779l-2.006-2.005L3.559,44.473z M4.943,39.53l3.558,3.559l6.12-1.715  c0,0-2.586-5.372-2.59-5.374l-5.374-2.59L4.943,39.53z M12.49,34.124c0.008,0.004,0.011,0.013,0.019,0.018L36.15,10.5l-3.619-3.619  L7.663,31.749L12.49,34.124z M38.922,3c-1.782,0-3.372,0.776-4.489,1.994l-0.007-0.007L33.912,5.5l8.619,8.619l0.527-0.528  l-0.006-0.006c1.209-1.116,1.979-2.701,1.979-4.476C45.031,5.735,42.296,3,38.922,3z"
+                                                    fill-rule="evenodd" /></svg>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-sm border-b-[1px] border-third">
+                                        <td class="py-2 flex gap-2">
+                                            <img class="w-16 pl-2 pt-2 h-full" src="/dist/img/1.jpg" alt="Produk">
+                                            <div class="flex flex-wrap">
+                                                <p>CAREMAX</p>
+                                                <p class="w-full text-[10px]">CareMax Disposible Mask isi 50pcs
+                                                </p>
+                                                <p class="w-full text-xs">Variant <span class="text-xs">ORANGE</span>
+                                                </p>
+                                                <p class="w-full text-xs">x 1</p>
+                                            </div>
+                                        </td>
+                                        <td class="px-5">
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                        </td>
+                                        <td class="text-center px-5">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                Rp 300.000</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                745</div>
+                                        </td>
+                                        <td class="w-[125px] px-5 flex gap-2">
+                                            <div
+                                                class="inline-block relative text w-10 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle"
+                                                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                                <label for="toggle"
+                                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-900 cursor-pointer"></label>
+                                            </div>
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                enable-background="new 0 0 48 48" id="Layer_1" version="1.1"
+                                                viewBox="0 0 48 48" xml:space="preserve">
+                                                <path clip-rule="evenodd"
+                                                    d="M44.929,14.391c-0.046,0.099-0.102,0.194-0.183,0.276L16.84,42.572  c-0.109,0.188-0.26,0.352-0.475,0.434l-13.852,3.88c-0.029,0.014-0.062,0.016-0.094,0.026l-0.047,0.014  c-0.008,0.003-0.017,0.001-0.024,0.004c-0.094,0.025-0.187,0.046-0.286,0.045c-0.098,0.003-0.189-0.015-0.282-0.041  c-0.021-0.006-0.04-0.002-0.061-0.009c-0.008-0.003-0.013-0.01-0.021-0.013c-0.088-0.033-0.164-0.083-0.24-0.141  c-0.039-0.028-0.08-0.053-0.113-0.086s-0.058-0.074-0.086-0.113c-0.058-0.075-0.107-0.152-0.141-0.24  c-0.004-0.008-0.01-0.013-0.013-0.021c-0.007-0.02-0.003-0.04-0.009-0.061c-0.025-0.092-0.043-0.184-0.041-0.281  c0-0.1,0.02-0.193,0.045-0.287c0.004-0.008,0.001-0.016,0.004-0.023l0.014-0.049c0.011-0.03,0.013-0.063,0.026-0.093l3.88-13.852  c0.082-0.216,0.246-0.364,0.434-0.475l27.479-27.48c0.04-0.045,0.087-0.083,0.128-0.127l0.299-0.299  c0.015-0.015,0.034-0.02,0.05-0.034C34.858,1.87,36.796,1,38.953,1C43.397,1,47,4.603,47,9.047  C47,11.108,46.205,12.969,44.929,14.391z M41.15,15.5l-3.619-3.619L13.891,35.522c0.004,0.008,0.014,0.011,0.018,0.019l2.373,4.827  L41.15,15.5z M3.559,44.473l2.785-0.779l-2.006-2.005L3.559,44.473z M4.943,39.53l3.558,3.559l6.12-1.715  c0,0-2.586-5.372-2.59-5.374l-5.374-2.59L4.943,39.53z M12.49,34.124c0.008,0.004,0.011,0.013,0.019,0.018L36.15,10.5l-3.619-3.619  L7.663,31.749L12.49,34.124z M38.922,3c-1.782,0-3.372,0.776-4.489,1.994l-0.007-0.007L33.912,5.5l8.619,8.619l0.527-0.528  l-0.006-0.006c1.209-1.116,1.979-2.701,1.979-4.476C45.031,5.735,42.296,3,38.922,3z"
+                                                    fill-rule="evenodd" /></svg>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-sm border-b-[1px] border-third">
+                                        <td class="py-2 flex gap-2">
+                                            <img class="w-16 pl-2 pt-2 h-full" src="/dist/img/1.jpg" alt="Produk">
+                                            <div class="flex flex-wrap">
+                                                <p>CAREMAX</p>
+                                                <p class="w-full text-[10px]">CareMax Disposible Mask isi 50pcs
+                                                </p>
+                                                <p class="w-full text-xs">Variant <span class="text-xs">ORANGE</span>
+                                                </p>
+                                                <p class="w-full text-xs">x 1</p>
+                                            </div>
+                                        </td>
+                                        <td class="px-5">
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                        </td>
+                                        <td class="text-center px-5">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                Rp 300.000</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                745</div>
+                                        </td>
+                                        <td class="w-[125px] px-5 flex gap-2">
+                                            <div
+                                                class="inline-block relative text w-10 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle"
+                                                    class="toggle-checkbox absolute right-0 block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                                <label for="toggle"
+                                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-primary cursor-pointer"></label>
+                                            </div>
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                enable-background="new 0 0 48 48" id="Layer_1" version="1.1"
+                                                viewBox="0 0 48 48" xml:space="preserve">
+                                                <path clip-rule="evenodd"
+                                                    d="M44.929,14.391c-0.046,0.099-0.102,0.194-0.183,0.276L16.84,42.572  c-0.109,0.188-0.26,0.352-0.475,0.434l-13.852,3.88c-0.029,0.014-0.062,0.016-0.094,0.026l-0.047,0.014  c-0.008,0.003-0.017,0.001-0.024,0.004c-0.094,0.025-0.187,0.046-0.286,0.045c-0.098,0.003-0.189-0.015-0.282-0.041  c-0.021-0.006-0.04-0.002-0.061-0.009c-0.008-0.003-0.013-0.01-0.021-0.013c-0.088-0.033-0.164-0.083-0.24-0.141  c-0.039-0.028-0.08-0.053-0.113-0.086s-0.058-0.074-0.086-0.113c-0.058-0.075-0.107-0.152-0.141-0.24  c-0.004-0.008-0.01-0.013-0.013-0.021c-0.007-0.02-0.003-0.04-0.009-0.061c-0.025-0.092-0.043-0.184-0.041-0.281  c0-0.1,0.02-0.193,0.045-0.287c0.004-0.008,0.001-0.016,0.004-0.023l0.014-0.049c0.011-0.03,0.013-0.063,0.026-0.093l3.88-13.852  c0.082-0.216,0.246-0.364,0.434-0.475l27.479-27.48c0.04-0.045,0.087-0.083,0.128-0.127l0.299-0.299  c0.015-0.015,0.034-0.02,0.05-0.034C34.858,1.87,36.796,1,38.953,1C43.397,1,47,4.603,47,9.047  C47,11.108,46.205,12.969,44.929,14.391z M41.15,15.5l-3.619-3.619L13.891,35.522c0.004,0.008,0.014,0.011,0.018,0.019l2.373,4.827  L41.15,15.5z M3.559,44.473l2.785-0.779l-2.006-2.005L3.559,44.473z M4.943,39.53l3.558,3.559l6.12-1.715  c0,0-2.586-5.372-2.59-5.374l-5.374-2.59L4.943,39.53z M12.49,34.124c0.008,0.004,0.011,0.013,0.019,0.018L36.15,10.5l-3.619-3.619  L7.663,31.749L12.49,34.124z M38.922,3c-1.782,0-3.372,0.776-4.489,1.994l-0.007-0.007L33.912,5.5l8.619,8.619l0.527-0.528  l-0.006-0.006c1.209-1.116,1.979-2.701,1.979-4.476C45.031,5.735,42.296,3,38.922,3z"
+                                                    fill-rule="evenodd" /></svg>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Bagian Semua -->
+                    <!-- Bagian Aktif -->
+                    <div x-show="tab === 'aktif'">
+                        <div class="w-full h-fit rounded-b-lg rounded-r-lg bg-white shadow-lg px-5 pb-5">
+                            <!-- Search Box -->
+                            <div class="flex w-full justify-between py-5">
+                                <div class="flex">
+                                    <div class="flex border-2 rounded h-fit">
+                                        <input type="text" class="px-4 w-64"
+                                            placeholder="Cari nama produk, sku, nomor resi, nomor pesanan">
+                                        <button class="flex w-10 justify-center items-center">
+                                            <svg class="text-slate-500 w-5 h-5 fill-current"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Search Box -->
+                            <table class="table-auto w-full">
+                                <thead class="rounded-md border-y-[1px] border-third">
+                                    <tr class="text-sm">
+                                        <th class="font-normal w-80 py-3">Info Produk</th>
+                                        <th class="font-normal w-20">Statistik</th>
+                                        <th class="font-normal w-32">Harga</th>
+                                        <th class="font-normal w-10">Stok</th>
+                                        <th class="font-normal w-20">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-sm border-b-[1px] border-third">
+                                        <td class="py-2 flex gap-2">
+                                            <img class="w-16 pl-2 pt-2 h-full" src="/dist/img/1.jpg" alt="Produk">
+                                            <div class="flex flex-wrap">
+                                                <p>CAREMAX</p>
+                                                <p class="w-full text-[10px]">CareMax Disposible Mask isi 50pcs
+                                                </p>
+                                                <p class="w-full text-xs">Variant <span class="text-xs">ORANGE</span>
+                                                </p>
+                                                <p class="w-full text-xs">x 1</p>
+                                            </div>
+                                        </td>
+                                        <td class="px-5">
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                        </td>
+                                        <td class="text-center px-5">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                Rp 300.000</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                745</div>
+                                        </td>
+                                        <td class="w-[125px] px-5 flex gap-2">
+                                            <div
+                                                class="inline-block relative text w-10 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle"
+                                                    class="toggle-checkbox absolute right-0 block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                                <label for="toggle"
+                                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-primary cursor-pointer"></label>
+                                            </div>
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                enable-background="new 0 0 48 48" id="Layer_1" version="1.1"
+                                                viewBox="0 0 48 48" xml:space="preserve">
+                                                <path clip-rule="evenodd"
+                                                    d="M44.929,14.391c-0.046,0.099-0.102,0.194-0.183,0.276L16.84,42.572  c-0.109,0.188-0.26,0.352-0.475,0.434l-13.852,3.88c-0.029,0.014-0.062,0.016-0.094,0.026l-0.047,0.014  c-0.008,0.003-0.017,0.001-0.024,0.004c-0.094,0.025-0.187,0.046-0.286,0.045c-0.098,0.003-0.189-0.015-0.282-0.041  c-0.021-0.006-0.04-0.002-0.061-0.009c-0.008-0.003-0.013-0.01-0.021-0.013c-0.088-0.033-0.164-0.083-0.24-0.141  c-0.039-0.028-0.08-0.053-0.113-0.086s-0.058-0.074-0.086-0.113c-0.058-0.075-0.107-0.152-0.141-0.24  c-0.004-0.008-0.01-0.013-0.013-0.021c-0.007-0.02-0.003-0.04-0.009-0.061c-0.025-0.092-0.043-0.184-0.041-0.281  c0-0.1,0.02-0.193,0.045-0.287c0.004-0.008,0.001-0.016,0.004-0.023l0.014-0.049c0.011-0.03,0.013-0.063,0.026-0.093l3.88-13.852  c0.082-0.216,0.246-0.364,0.434-0.475l27.479-27.48c0.04-0.045,0.087-0.083,0.128-0.127l0.299-0.299  c0.015-0.015,0.034-0.02,0.05-0.034C34.858,1.87,36.796,1,38.953,1C43.397,1,47,4.603,47,9.047  C47,11.108,46.205,12.969,44.929,14.391z M41.15,15.5l-3.619-3.619L13.891,35.522c0.004,0.008,0.014,0.011,0.018,0.019l2.373,4.827  L41.15,15.5z M3.559,44.473l2.785-0.779l-2.006-2.005L3.559,44.473z M4.943,39.53l3.558,3.559l6.12-1.715  c0,0-2.586-5.372-2.59-5.374l-5.374-2.59L4.943,39.53z M12.49,34.124c0.008,0.004,0.011,0.013,0.019,0.018L36.15,10.5l-3.619-3.619  L7.663,31.749L12.49,34.124z M38.922,3c-1.782,0-3.372,0.776-4.489,1.994l-0.007-0.007L33.912,5.5l8.619,8.619l0.527-0.528  l-0.006-0.006c1.209-1.116,1.979-2.701,1.979-4.476C45.031,5.735,42.296,3,38.922,3z"
+                                                    fill-rule="evenodd" /></svg>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-sm border-b-[1px] border-third">
+                                        <td class="py-2 flex gap-2">
+                                            <img class="w-16 pl-2 pt-2 h-full" src="/dist/img/1.jpg" alt="Produk">
+                                            <div class="flex flex-wrap">
+                                                <p>CAREMAX</p>
+                                                <p class="w-full text-[10px]">CareMax Disposible Mask isi 50pcs
+                                                </p>
+                                                <p class="w-full text-xs">Variant <span class="text-xs">ORANGE</span>
+                                                </p>
+                                                <p class="w-full text-xs">x 1</p>
+                                            </div>
+                                        </td>
+                                        <td class="px-5">
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                        </td>
+                                        <td class="text-center px-5">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                Rp 300.000</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                745</div>
+                                        </td>
+                                        <td class="w-[125px] px-5 flex gap-2">
+                                            <div
+                                                class="inline-block relative text w-10 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle"
+                                                    class="toggle-checkbox absolute right-0 block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                                <label for="toggle"
+                                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-primary cursor-pointer"></label>
+                                            </div>
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                enable-background="new 0 0 48 48" id="Layer_1" version="1.1"
+                                                viewBox="0 0 48 48" xml:space="preserve">
+                                                <path clip-rule="evenodd"
+                                                    d="M44.929,14.391c-0.046,0.099-0.102,0.194-0.183,0.276L16.84,42.572  c-0.109,0.188-0.26,0.352-0.475,0.434l-13.852,3.88c-0.029,0.014-0.062,0.016-0.094,0.026l-0.047,0.014  c-0.008,0.003-0.017,0.001-0.024,0.004c-0.094,0.025-0.187,0.046-0.286,0.045c-0.098,0.003-0.189-0.015-0.282-0.041  c-0.021-0.006-0.04-0.002-0.061-0.009c-0.008-0.003-0.013-0.01-0.021-0.013c-0.088-0.033-0.164-0.083-0.24-0.141  c-0.039-0.028-0.08-0.053-0.113-0.086s-0.058-0.074-0.086-0.113c-0.058-0.075-0.107-0.152-0.141-0.24  c-0.004-0.008-0.01-0.013-0.013-0.021c-0.007-0.02-0.003-0.04-0.009-0.061c-0.025-0.092-0.043-0.184-0.041-0.281  c0-0.1,0.02-0.193,0.045-0.287c0.004-0.008,0.001-0.016,0.004-0.023l0.014-0.049c0.011-0.03,0.013-0.063,0.026-0.093l3.88-13.852  c0.082-0.216,0.246-0.364,0.434-0.475l27.479-27.48c0.04-0.045,0.087-0.083,0.128-0.127l0.299-0.299  c0.015-0.015,0.034-0.02,0.05-0.034C34.858,1.87,36.796,1,38.953,1C43.397,1,47,4.603,47,9.047  C47,11.108,46.205,12.969,44.929,14.391z M41.15,15.5l-3.619-3.619L13.891,35.522c0.004,0.008,0.014,0.011,0.018,0.019l2.373,4.827  L41.15,15.5z M3.559,44.473l2.785-0.779l-2.006-2.005L3.559,44.473z M4.943,39.53l3.558,3.559l6.12-1.715  c0,0-2.586-5.372-2.59-5.374l-5.374-2.59L4.943,39.53z M12.49,34.124c0.008,0.004,0.011,0.013,0.019,0.018L36.15,10.5l-3.619-3.619  L7.663,31.749L12.49,34.124z M38.922,3c-1.782,0-3.372,0.776-4.489,1.994l-0.007-0.007L33.912,5.5l8.619,8.619l0.527-0.528  l-0.006-0.006c1.209-1.116,1.979-2.701,1.979-4.476C45.031,5.735,42.296,3,38.922,3z"
+                                                    fill-rule="evenodd" /></svg>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Bagian Aktif -->
+                    <!-- Bagian Tidak Aktif -->
+                    <div x-show="tab === 'tidakaktif'">
+                        <div class="w-full h-fit rounded-b-lg rounded-r-lg bg-white shadow-lg px-5 pb-5">
+                            <!-- Search Box -->
+                            <div class="flex w-full justify-between py-5">
+                                <div class="flex">
+                                    <div class="flex border-2 rounded h-fit">
+                                        <input type="text" class="px-4 w-64"
+                                            placeholder="Cari nama produk, sku, nomor resi, nomor pesanan">
+                                        <button class="flex w-10 justify-center items-center">
+                                            <svg class="text-slate-500 w-5 h-5 fill-current"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Search Box -->
+                            <table class="table-auto w-full">
+                                <thead class="rounded-md border-y-[1px] border-third">
+                                    <tr class="text-sm">
+                                        <th class="font-normal w-80 py-3">Info Produk</th>
+                                        <th class="font-normal w-20">Statistik</th>
+                                        <th class="font-normal w-32">Harga</th>
+                                        <th class="font-normal w-10">Stok</th>
+                                        <th class="font-normal w-20">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-sm border-b-[1px] border-third">
+                                        <td class="py-2 flex gap-2">
+                                            <img class="w-16 pl-2 pt-2 h-full" src="/dist/img/1.jpg" alt="Produk">
+                                            <div class="flex flex-wrap">
+                                                <p>CAREMAX</p>
+                                                <p class="w-full text-[10px]">CareMax Disposible Mask isi 50pcs
+                                                </p>
+                                                <p class="w-full text-xs">Variant <span class="text-xs">ORANGE</span>
+                                                </p>
+                                                <p class="w-full text-xs">x 1</p>
+                                            </div>
+                                        </td>
+                                        <td class="px-5">
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                        </td>
+                                        <td class="text-center px-5">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                Rp 300.000</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                745</div>
+                                        </td>
+                                        <td class="w-[125px] px-5 flex gap-2">
+                                            <div
+                                                class="inline-block relative text w-10 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle"
+                                                    class="toggle-checkbox absolute right-0 block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                                <label for="toggle"
+                                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-primary cursor-pointer"></label>
+                                            </div>
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                enable-background="new 0 0 48 48" id="Layer_1" version="1.1"
+                                                viewBox="0 0 48 48" xml:space="preserve">
+                                                <path clip-rule="evenodd"
+                                                    d="M44.929,14.391c-0.046,0.099-0.102,0.194-0.183,0.276L16.84,42.572  c-0.109,0.188-0.26,0.352-0.475,0.434l-13.852,3.88c-0.029,0.014-0.062,0.016-0.094,0.026l-0.047,0.014  c-0.008,0.003-0.017,0.001-0.024,0.004c-0.094,0.025-0.187,0.046-0.286,0.045c-0.098,0.003-0.189-0.015-0.282-0.041  c-0.021-0.006-0.04-0.002-0.061-0.009c-0.008-0.003-0.013-0.01-0.021-0.013c-0.088-0.033-0.164-0.083-0.24-0.141  c-0.039-0.028-0.08-0.053-0.113-0.086s-0.058-0.074-0.086-0.113c-0.058-0.075-0.107-0.152-0.141-0.24  c-0.004-0.008-0.01-0.013-0.013-0.021c-0.007-0.02-0.003-0.04-0.009-0.061c-0.025-0.092-0.043-0.184-0.041-0.281  c0-0.1,0.02-0.193,0.045-0.287c0.004-0.008,0.001-0.016,0.004-0.023l0.014-0.049c0.011-0.03,0.013-0.063,0.026-0.093l3.88-13.852  c0.082-0.216,0.246-0.364,0.434-0.475l27.479-27.48c0.04-0.045,0.087-0.083,0.128-0.127l0.299-0.299  c0.015-0.015,0.034-0.02,0.05-0.034C34.858,1.87,36.796,1,38.953,1C43.397,1,47,4.603,47,9.047  C47,11.108,46.205,12.969,44.929,14.391z M41.15,15.5l-3.619-3.619L13.891,35.522c0.004,0.008,0.014,0.011,0.018,0.019l2.373,4.827  L41.15,15.5z M3.559,44.473l2.785-0.779l-2.006-2.005L3.559,44.473z M4.943,39.53l3.558,3.559l6.12-1.715  c0,0-2.586-5.372-2.59-5.374l-5.374-2.59L4.943,39.53z M12.49,34.124c0.008,0.004,0.011,0.013,0.019,0.018L36.15,10.5l-3.619-3.619  L7.663,31.749L12.49,34.124z M38.922,3c-1.782,0-3.372,0.776-4.489,1.994l-0.007-0.007L33.912,5.5l8.619,8.619l0.527-0.528  l-0.006-0.006c1.209-1.116,1.979-2.701,1.979-4.476C45.031,5.735,42.296,3,38.922,3z"
+                                                    fill-rule="evenodd" /></svg>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-sm border-b-[1px] border-third">
+                                        <td class="py-2 flex gap-2">
+                                            <img class="w-16 pl-2 pt-2 h-full" src="/dist/img/1.jpg" alt="Produk">
+                                            <div class="flex flex-wrap">
+                                                <p>CAREMAX</p>
+                                                <p class="w-full text-[10px]">CareMax Disposible Mask isi 50pcs
+                                                </p>
+                                                <p class="w-full text-xs">Variant <span class="text-xs">ORANGE</span>
+                                                </p>
+                                                <p class="w-full text-xs">x 1</p>
+                                            </div>
+                                        </td>
+                                        <td class="px-5">
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    style="enable-background:new 0 0 512 512;" version="1.1"
+                                                    viewBox="0 0 512 512" xml:space="preserve">
+                                                    <g id="_x31_66_x2C__Heart_x2C__Love_x2C__Like_x2C__Twitter">
+                                                        <g>
+                                                            <path
+                                                                d="M365.4,59.628c60.56,0,109.6,49.03,109.6,109.47c0,109.47-109.6,171.8-219.06,281.271    C146.47,340.898,37,278.568,37,169.099c0-60.44,49.04-109.47,109.47-109.47c54.73,0,82.1,27.37,109.47,82.1    C283.3,86.999,310.67,59.628,365.4,59.628z"
+                                                                style="fill:#FF7979;" />
+                                                        </g>
+                                                    </g>
+                                                    <g />
+                                                </svg>
+                                                <p>759</p>
+                                            </div>
+                                        </td>
+                                        <td class="text-center px-5">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                Rp 300.000</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div
+                                                class="border flex items-center justify-center border-third h-5 rounded-sm">
+                                                745</div>
+                                        </td>
+                                        <td class="w-[125px] px-5 flex gap-2">
+                                            <div
+                                                class="inline-block relative text w-10 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle"
+                                                    class="toggle-checkbox absolute right-0 block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                                <label for="toggle"
+                                                    class="toggle-label block overflow-hidden h-6 rounded-full bg-primary cursor-pointer"></label>
+                                            </div>
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                enable-background="new 0 0 48 48" id="Layer_1" version="1.1"
+                                                viewBox="0 0 48 48" xml:space="preserve">
+                                                <path clip-rule="evenodd"
+                                                    d="M44.929,14.391c-0.046,0.099-0.102,0.194-0.183,0.276L16.84,42.572  c-0.109,0.188-0.26,0.352-0.475,0.434l-13.852,3.88c-0.029,0.014-0.062,0.016-0.094,0.026l-0.047,0.014  c-0.008,0.003-0.017,0.001-0.024,0.004c-0.094,0.025-0.187,0.046-0.286,0.045c-0.098,0.003-0.189-0.015-0.282-0.041  c-0.021-0.006-0.04-0.002-0.061-0.009c-0.008-0.003-0.013-0.01-0.021-0.013c-0.088-0.033-0.164-0.083-0.24-0.141  c-0.039-0.028-0.08-0.053-0.113-0.086s-0.058-0.074-0.086-0.113c-0.058-0.075-0.107-0.152-0.141-0.24  c-0.004-0.008-0.01-0.013-0.013-0.021c-0.007-0.02-0.003-0.04-0.009-0.061c-0.025-0.092-0.043-0.184-0.041-0.281  c0-0.1,0.02-0.193,0.045-0.287c0.004-0.008,0.001-0.016,0.004-0.023l0.014-0.049c0.011-0.03,0.013-0.063,0.026-0.093l3.88-13.852  c0.082-0.216,0.246-0.364,0.434-0.475l27.479-27.48c0.04-0.045,0.087-0.083,0.128-0.127l0.299-0.299  c0.015-0.015,0.034-0.02,0.05-0.034C34.858,1.87,36.796,1,38.953,1C43.397,1,47,4.603,47,9.047  C47,11.108,46.205,12.969,44.929,14.391z M41.15,15.5l-3.619-3.619L13.891,35.522c0.004,0.008,0.014,0.011,0.018,0.019l2.373,4.827  L41.15,15.5z M3.559,44.473l2.785-0.779l-2.006-2.005L3.559,44.473z M4.943,39.53l3.558,3.559l6.12-1.715  c0,0-2.586-5.372-2.59-5.374l-5.374-2.59L4.943,39.53z M12.49,34.124c0.008,0.004,0.011,0.013,0.019,0.018L36.15,10.5l-3.619-3.619  L7.663,31.749L12.49,34.124z M38.922,3c-1.782,0-3.372,0.776-4.489,1.994l-0.007-0.007L33.912,5.5l8.619,8.619l0.527-0.528  l-0.006-0.006c1.209-1.116,1.979-2.701,1.979-4.476C45.031,5.735,42.296,3,38.922,3z"
+                                                    fill-rule="evenodd" /></svg>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Bagian Tidak Aktif -->
+                </div>
+                <!-- Produk Saya -->
+            </div>
+            <!-- Menu -->
         </div>
-        <!-- Menu -->
-    </div>
 
 </body>
 

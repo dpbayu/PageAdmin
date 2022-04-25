@@ -44,7 +44,8 @@
                         <div class="w-full flex justify-between px-10" x-data="{selected:false}"
                             x-on:click="selected=!open">
                             <button class="font-semibold">Pesanan</button>
-                            <svg class="w-10 h-10 fill-current transition-all duration-1000" x-bind:class="{'rotate' : selected}" viewBox="0 0 64 64"
+                            <svg class="w-10 h-10 fill-current transition-all duration-1000"
+                                x-bind:class="{'rotate' : selected}" viewBox="0 0 64 64"
                                 xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <style type="text/css">
                                     .st0 {
@@ -81,24 +82,31 @@
                 </li>
                 <!-- Keuangan -->
                 <li class="w-full items-center cursor-pointer justify-between" x-data="{ open: false }">
-                    <div class="flex justify-between px-10" x-on:click="open = ! open">
-                        <button class="font-semibold">Keuangan</button>
-                        <svg class="w-10 h-10 fill-current" viewBox="0 0 64 64"
-                            xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <style type="text/css">
-                                .st0 {
-                                    fill: #000000;
-                                }
-                            </style>
-                            <g>
-                                <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
-                                    <polyline class="st0" id="Fill-35"
-                                        points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
+                    <div x-on:click="open = ! open">
+                        <div class="w-full flex justify-between px-10" x-data="{selected:false}"
+                            x-on:click="selected=!open">
+                            <button class="font-semibold">Keuangan</button>
+                            <svg class="w-10 h-10 fill-current transition-all duration-1000"
+                                x-bind:class="{'rotate' : selected}" viewBox="0 0 64 64"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <style type="text/css">
+                                    .st0 {
+                                        fill: #000000;
+                                    }
+                                </style>
+                                <g>
+                                    <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
+                                        <polyline class="st0" id="Fill-35"
+                                            points="-218.7,-308.6 -216.7,-310.6 -205,-298.8 -193.3,-310.6 -191.3,-308.6 -205,-294.9      -218.7,-308.6    " />
+                                    </g>
                                 </g>
-                            </g>
-                        </svg>
+                            </svg>
+                        </div>
                     </div>
-                    <ul class="my-2 w-full" x-show="open">
+                    <ul class="my-2 w-full" x-show="open" x-transition:enter="transition ease-out duration-1000"
+                        x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-1000"
+                        x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
                         <div @click.prevent="menu='Saldo'">
                             <li class="my-2 px-14 py-1"
                                 :class="{'bg-orange-100 w-full text-orange-500': menu === 'Saldo'}">
@@ -3712,7 +3720,7 @@
                     <!-- Varian 1 -->
                     <div class="flex flex-wrap w-full my-3">
                         <p class="w-full">Tipe Varian 1</p>
-                        <div class="w-3/5 text-third">
+                        <div class="w-3/5 text-third relative">
                             <input class="w-full border-[1px] pl-2 h-6 border-third rounded-md"
                                 placeholder="Ukuran, Warna, Kemasan, Ukuran Kemasan">
                             <svg class="h-10 w-10 absolute -top-2 right-0 fill-current"

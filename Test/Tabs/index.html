@@ -7,12 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>Tabs Alpine JS</title>
-    <style>
-        .rotate {
-            font-weight: 900;
-            transform: rotate(180deg);
-        }
-    </style>
 </head>
 
 <body class="text-gray-800 bg-gray-200">
@@ -58,12 +52,6 @@
                 quae hic, fugiat facere sequi. Molestias deleniti esse maxime eveniet quae mollitia blanditiis, dicta
                 quidem veritatis minus reprehenderit assumenda possimus enim nisi perferendis.</div>
         </div>
-    </div>
-    <div x-data="{selected: false}">
-        <div x-bind:class="{'rotate':selected}">
-            <span>Am i bold?</span>
-        </div>
-        <button x-on:click="selected=true">make it bold</button>
     </div>
 </body>
 

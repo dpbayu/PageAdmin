@@ -14,14 +14,14 @@
         <!-- Title -->
         <h1 class="text-2xl font-bold">Image Selection</h1>
         <div>
-            <img src="/src/img/1.jpg" x-show="image === 'image1'" alt="1">
-            <img src="/src/img/2.jpg" x-show="image === 'image2'" alt="2">
-            <img src="/src/img/3.jpg" x-show="image === 'image3'" alt="3">
-            <img src="/src/img/4.jpg" x-show="image === 'image4'" alt="4">
-            <img src="/src/img/5.jpg" x-show="image === 'image5'" alt="5">
+            <img class="w-96" src="/src/img/1.jpg" x-show="image === 'image1'" alt="1">
+            <img class="w-96" src="/src/img/2.jpg" x-show="image === 'image2'" alt="2">
+            <img class="w-96" src="/src/img/3.jpg" x-show="image === 'image3'" alt="3">
+            <img class="w-96" src="/src/img/4.jpg" x-show="image === 'image4'" alt="4">
+            <img class="w-96" src="/src/img/5.jpg" x-show="image === 'image5'" alt="5">
         </div>
         <div class="flex item-center mt-2 gap-1">
-            <a class="border border-transparent hover:border-blue-500 w-16" href="#"
+            <a class="border border-transparent hover:border-blue-500 w-14" href="#"
                 :class="{'border-blue-500 border-2' : image === 'image1'}" @click.prevent=" image= 'image1' "><img
                     src="/src/img/1.jpg" alt="1"></a>
             <a class="border border-transparent hover:border-blue-500 w-16" href="#"

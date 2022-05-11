@@ -1,3 +1,4 @@
+// TODO LIST
 function todos() {
     return {
         todos: [{
@@ -24,11 +25,8 @@ function todos() {
         }
     }
 }
-
 'use strict';
-
 (function ($) {
-
     var lastWindowScrollTop = 0,
         userAgent = navigator.userAgent,
         $body = $('body'),
@@ -54,10 +52,9 @@ function todos() {
             window.scrollTo(0, lastWindowScrollTop);
         }
     }
-
     $.fn.scrollableOverlay = function () {
         this.on('show', fixedBody)
         this.on('hide', looseBody)
     };
-
 })(jQuery);
+// TODO LIST

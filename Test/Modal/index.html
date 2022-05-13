@@ -7,42 +7,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>Modal Alpine JS</title>
-    <style>
-        /* Datamime Signup Modal */
-        .disable-scroll {
-            overflow: hidden;
-        }
-
-        .dm-modal {
-            width: 100%;
-            height: 100vh;
-            box-sizing: border-box;
-            top: 0;
-            left: 0;
-            right: 0;
-            position: fixed;
-            z-index: 2347483657 !important;
-            transition: 0.8s ease all;
-            background-color: rgb(19, 42, 42);
-        }
-
-        .dm-modal-hide {
-            opacity: 0;
-            user-select: none;
-            top: -200%;
-            transition: 0.7s ease all;
-        }
-    </style>
 </head>
 
 <body class="text-gray-800 bg-gray-200">
     <div class="container mx-auto px-4 xl:px-64 py-10">
         <h1 class="text-2xl font-bold">Modal</h1>
         <div x-data="{isOpen: false}">
-            <button class="bg-blue-700 text-white px-4 py-1 text-sm rounded" @click="isOpen=true">Open
-                Modal</button>
-            <div class="mx-auto absolute top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"
-                x-show="isOpen">
+            <button class="bg-blue-700 text-white px-4 py-1 text-sm rounded"
+                @click="isOpen=true">Open
+                Modal
+            </button>
+            <div class="mx-auto absolute top-0 left-0 w-full h-full flex items-center shadow-lg overflow-hidden"
+                x-show="isOpen" style="background-color: rgba(0,0,0,.5)">
                 <div class="container mx-auto rounded p-4 mt-2 overflow-y-auto">
                     <div class="bg-white rounded p-8">
                         <h2 class="text-2xl font-bold mb-3">Modal Title</h2>
@@ -52,7 +28,8 @@
                                 inventore alias aspernatur.</p>
                         </div>
                         <div class="mt-4">
-                            <button class="bg-blue-700 text-white px-4 py-3 text-sm rounded" @click="isOpen=false">Close
+                            <button x-ref="btnModalClose" class="bg-blue-700 text-white px-4 py-3 text-sm rounded"
+                                @click="isOpen=false">Close
                                 Modal</button>
                         </div>
                     </div>
@@ -65,60 +42,6 @@
     <div class="h-96 w-full bg-orange-500"></div>
     <div class="h-96 w-full bg-orange-300"></div>
     <div class="h-96 w-full bg-orange-400"></div> -->
-    <h1>Test COntent is Here</h1>
-    <button type="button" class="show-modal">Sign UP NOW</button>
-    <div class="dm-modal dm-modal-hide" data-trigger="show-modal">
-        <div x-show="isOpen">
-            <div class="container mx-auto rounded p-4 mt-2 overflow-y-auto">
-                <div class="bg-white rounded p-8">
-                    <h2 class="text-2xl font-bold mb-3">Modal Title</h2>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, sit. Commodi non,
-                            neque rerum placeat, nulla necessitatibus quisquam eaque laborum, repudiandae nemo
-                            inventore alias aspernatur.</p>
-                    </div>
-                    <div class="mt-4">
-                        <button type="button" class="dm-close-modal bg-blue-700 text-white px-4 py-3 text-sm rounded" @click="isOpen=false">Close
-                            Modal</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="http://unpkg.com/jquery"></script>
-    <script src="/js/script.js"></script>
-    <script>
-        jQuery.noConflict();
-        jQuery(document).ready(function ($) {
-            /* Signup Pop Form */
-            if ($(".dm-modal")[0]) {
-                var dm_trigger_class = "." + $('.dm-modal').data("trigger");
-                $(dm_trigger_class).click(function (e) {
-                    e.preventDefault();
-                    $('.dm-modal').appendTo('body');
-                    $('.dm-modal').removeClass("dm-modal-hide").addClass("dm-visible");
-                    $('body').addClass("disable-scroll");
-                });
-                $('.dm-close-modal').click(function (e) {
-                    e.preventDefault();
-                    $('.dm-modal').addClass("dm-modal-hide").removeClass("dm-visible");
-                    $('body').removeClass("disable-scroll");
-                });
-                $('.dm-modal-mask').click(function (e) {
-                    e.preventDefault();
-                    $('.dm-modal').addClass("dm-modal-hide").removeClass("dm-visible");;
-                    $('body').removeClass("disable-scroll");
-                });
-                $(document).on("keyup", function (e) {
-                    if (e.key === "Escape") {
-                        $('.dm-modal').addClass("dm-modal-hide").removeClass("dm-visible");;
-                        $('body').removeClass("disable-scroll");
-                    }
-                });
-            }
-        });
-    </script>
 </body>
 
 </html>

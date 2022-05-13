@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Custom Select Alpine JS</title>
+</head>
+
+<body class="bg-gray-400 flex gap-20 justify-center items-center w-full h-screen">
+    <!-- Select Item -->
+    <div x-data="custom_select" class="relative flex-col">
+        <button @click="show = !show"
+            class="px-4 rounded focus:outline-none ring focus:ring-blue-400 ring-blue-200 bg-white">
+            <p x-text="value == null ? 'Select' : value" class="w-48">Select</p>
+        </button>
+        <div x-show="show" @click.outside="show=false" x-transition.opacity.scale.origin.top.duration.300ms
+            class="absolute top-8 left-0 bg-white rounded shadow-md py-1 px-5 space-y-2">
+            <template x-for="product in products" :key="product">
+                <button @click="value=product;show=false" class="w-48 flex">
+                    <p x-text="product" class="hover:text-blue-400"></p>
+                </button>
+            </template>
+        </div>
+    </div>
+    <!-- Select Item -->
+
+</body>
+<script>
+    // Select Data
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('custom_select', () => ({
+            products: ['Mobile', 'Laptop', 'Keyboard', 'Mouse'],
+            show: false,
+            value: null
+        }));
+    })
+</script>
+
+</html>

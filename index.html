@@ -216,13 +216,11 @@
                     </ul>
                 </li>
                 <!-- Pengaturan Akun -->
-                <li class="w-full items-center cursor-pointer justify-between" x-data="{ open: false }">
-                    <div x-on:click="open = ! open">
-                        <div class="w-full flex justify-between px-10" x-data="{selected:false}"
-                            x-on:click="selected=!open">
+                <li class="w-full items-center cursor-pointer justify-between">
+                        <div class="w-full flex justify-between px-10">
                             <button class="font-semibold">Pengaturan Akun</button>
                             <svg class="w-10 h-10 fill-current transition-all duration-1000"
-                                x-bind:class="{'rotate' : selected}" viewBox="0 0 64 64"
+                                viewBox="0 0 64 64"
                                 xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <style type="text/css">
                                     .st0 {
@@ -237,7 +235,6 @@
                                 </g>
                             </svg>
                         </div>
-                    </div>
                 </li>
             </ul>
         </div>
